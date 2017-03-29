@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2B5550661E88F430004EEEEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5550651E88F430004EEEEF /* AppDelegate.swift */; };
-		2B5550681E88F430004EEEEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5550671E88F430004EEEEF /* ViewController.swift */; };
 		2B55506B1E88F430004EEEEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5550691E88F430004EEEEF /* Main.storyboard */; };
 		2B55506D1E88F430004EEEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B55506C1E88F430004EEEEF /* Assets.xcassets */; };
 		2B5550701E88F430004EEEEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B55506E1E88F430004EEEEF /* LaunchScreen.storyboard */; };
 		2B55507B1E88F430004EEEEF /* nishisujiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55507A1E88F430004EEEEF /* nishisujiTests.swift */; };
 		2B5550861E88F430004EEEEF /* nishisujiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5550851E88F430004EEEEF /* nishisujiUITests.swift */; };
+		2B5550941E8919C0004EEEEF /* yesterday.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B5550931E8919C0004EEEEF /* yesterday.jpg */; };
+		2B6C6EEB1E8A2773005E85BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6C6EEA1E8A2773005E85BD /* ViewController.swift */; };
+		2B6C6EED1E8A3194005E85BD /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6C6EEC1E8A3194005E85BD /* customCell.swift */; };
+		2B8A86561E892D66006BFF70 /* category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A86551E892D66006BFF70 /* category.swift */; };
+		2BB527DF1E8B7E08003E2451 /* newFashionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB527DE1E8B7E08003E2451 /* newFashionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		2B5550621E88F430004EEEEF /* nishisuji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nishisuji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5550651E88F430004EEEEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B5550671E88F430004EEEEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B55506A1E88F430004EEEEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B55506C1E88F430004EEEEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B55506F1E88F430004EEEEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		2B5550811E88F430004EEEEF /* nishisujiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nishisujiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5550851E88F430004EEEEF /* nishisujiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nishisujiUITests.swift; sourceTree = "<group>"; };
 		2B5550871E88F430004EEEEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B5550931E8919C0004EEEEF /* yesterday.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yesterday.jpg; sourceTree = "<group>"; };
+		2B6C6EEA1E8A2773005E85BD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B6C6EEC1E8A3194005E85BD /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		2B8A86551E892D66006BFF70 /* category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = category.swift; sourceTree = "<group>"; };
+		2BB527DE1E8B7E08003E2451 /* newFashionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newFashionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		2B5550591E88F430004EEEEF = {
 			isa = PBXGroup;
 			children = (
+				2B5550931E8919C0004EEEEF /* yesterday.jpg */,
 				2B5550641E88F430004EEEEF /* nishisuji */,
 				2B5550791E88F430004EEEEF /* nishisujiTests */,
 				2B5550841E88F430004EEEEF /* nishisujiUITests */,
@@ -97,12 +106,15 @@
 		2B5550641E88F430004EEEEF /* nishisuji */ = {
 			isa = PBXGroup;
 			children = (
+				2B6C6EEA1E8A2773005E85BD /* ViewController.swift */,
 				2B5550651E88F430004EEEEF /* AppDelegate.swift */,
-				2B5550671E88F430004EEEEF /* ViewController.swift */,
 				2B5550691E88F430004EEEEF /* Main.storyboard */,
 				2B55506C1E88F430004EEEEF /* Assets.xcassets */,
 				2B55506E1E88F430004EEEEF /* LaunchScreen.storyboard */,
 				2B5550711E88F430004EEEEF /* Info.plist */,
+				2B8A86551E892D66006BFF70 /* category.swift */,
+				2B6C6EEC1E8A3194005E85BD /* customCell.swift */,
+				2BB527DE1E8B7E08003E2451 /* newFashionViewController.swift */,
 			);
 			path = nishisuji;
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 				TargetAttributes = {
 					2B5550611E88F430004EEEEF = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = MEW6JDZX93;
 						ProvisioningStyle = Automatic;
 					};
 					2B5550751E88F430004EEEEF = {
@@ -234,6 +247,7 @@
 			files = (
 				2B5550701E88F430004EEEEF /* LaunchScreen.storyboard in Resources */,
 				2B55506D1E88F430004EEEEF /* Assets.xcassets in Resources */,
+				2B5550941E8919C0004EEEEF /* yesterday.jpg in Resources */,
 				2B55506B1E88F430004EEEEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B5550681E88F430004EEEEF /* ViewController.swift in Sources */,
+				2B6C6EEB1E8A2773005E85BD /* ViewController.swift in Sources */,
 				2B5550661E88F430004EEEEF /* AppDelegate.swift in Sources */,
+				2B6C6EED1E8A3194005E85BD /* customCell.swift in Sources */,
+				2BB527DF1E8B7E08003E2451 /* newFashionViewController.swift in Sources */,
+				2B8A86561E892D66006BFF70 /* category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MEW6JDZX93;
 				INFOPLIST_FILE = nishisuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishisuji;
@@ -424,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MEW6JDZX93;
 				INFOPLIST_FILE = nishisuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishisuji;
@@ -505,6 +524,7 @@
 				2B55508C1E88F430004EEEEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B55508D1E88F430004EEEEF /* Build configuration list for PBXNativeTarget "nishisujiTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +533,7 @@
 				2B55508F1E88F430004EEEEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B5550901E88F430004EEEEF /* Build configuration list for PBXNativeTarget "nishisujiUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +542,7 @@
 				2B5550921E88F430004EEEEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
