@@ -40,6 +40,40 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         // Do any additional setup after loading the view.
     }
     
+    // セルが選択したとき発動
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("\(indexPath.row)行目が選択されました")
+        
+        // メンバ変数に行番号を保存
+        selectedIndex = indexPath.row
+        
+        // セグエを指定して画面遷移
+        performSegue(withIdentifier: "showSecondView", sender: nil)
+        
+    }
+    
+    // Segueで画面遷移するとき発動
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // タップされたボタンのtableviewの選択行を取得
+        var btn = sender as! UIButton
+        var cell = btn.superview?.superview as! UITableViewCell
+        //var row = mytableview.indexPathForCell(cell)?.row
+        var row = mytableview.indexPath(for: cell)?.row
+        // 行数を表示
+        print("\(row)");
+        
+        // 次の遷移先の画面をインスタンス化して取得
+        let secondVC = segue.destination as!
+        tuika
+        
+        // 次の遷移先の画面のプロパティに、選択された行番号を保存
+        selectedIndex = row!
+        secondVC.scSeletectedIndex = selectedIndex
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
