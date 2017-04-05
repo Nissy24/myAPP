@@ -24,7 +24,7 @@ class tuika: UIViewController{
     @IBOutlet weak var mymemo: UITextView!
     
     
-    var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子"]
+    var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子","その他"]
     
     // 前画面から行番号を受け取るためのプロパティ
     var scSeletectedIndex = -1
@@ -99,7 +99,7 @@ class tuika: UIViewController{
         //値のセット
         newRecord.setValue(mymy.text, forKey: "title") // 値を代入
         newRecord.setValue(Date(), forKey: "saveDate")//値を代入
-        newRecord.setValue(buydate.text, forKey: "chickindate")
+        newRecord.setValue(Date(), forKey: "checkindate")
         newRecord.setValue(mymemo.text, forKey: "memo")
         //newRecord.setValue(myclothes.(何か入れるよ！！！), forKey: "collection")
         

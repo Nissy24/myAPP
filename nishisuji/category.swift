@@ -12,7 +12,7 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
 
     @IBOutlet weak var mytableview: UITableView!
     
-    var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子"]
+    var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子","その他"]
     
     var selectedIndex = -1
     
@@ -56,6 +56,8 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
     // Segueで画面遷移するとき発動
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // if文でshowSecondViewが押された時のコードを書く
+        if (segue.identifier! == "showTsuikaView") {
         // タップされたボタンのtableviewの選択行を取得
         var btn = sender as! UIButton
         var cell = btn.superview?.superview as! UITableViewCell
@@ -71,6 +73,9 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         // 次の遷移先の画面のプロパティに、選択された行番号を保存
         selectedIndex = row!
         secondVC.scSeletectedIndex = selectedIndex
+        }
+        
+        
         
     }
     

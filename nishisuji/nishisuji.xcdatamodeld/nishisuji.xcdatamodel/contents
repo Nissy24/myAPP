@@ -2,8 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Myfashion" representedClassName=".Myfashion" syncable="YES">
         <attribute name="checkindate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fashion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="memo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="myfashion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="saveDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -15,7 +15,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Myitem" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Myfashion" positionX="-54" positionY="36" width="128" height="120"/>
+        <element name="Myitem" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

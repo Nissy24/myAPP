@@ -2,7 +2,7 @@
 //  Myfashion+CoreDataProperties.swift
 //  nishisuji
 //
-//  Created by 西筋啓人 on 2017/04/04.
+//  Created by 西筋啓人 on 2017/04/05.
 //  Copyright © 2017年 Hiroto Nishisuji. All rights reserved.
 //
 
@@ -16,10 +16,10 @@ extension Myfashion {
         return NSFetchRequest<Myfashion>(entityName: "Myfashion")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var saveDate: NSDate?
-    @NSManaged public var memo: String?
-    @NSManaged public var myfashion: String?
     @NSManaged public var checkindate: NSDate?
+    @NSManaged public var memo: String?
+    @NSManaged public var fashion: String?
+    @NSManaged public var saveDate: NSDate?
+    @NSManaged public var title: String?
 
 }

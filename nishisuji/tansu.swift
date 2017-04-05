@@ -8,13 +8,39 @@
 
 import UIKit
 
-class tansu: UIViewController {
+class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    //セクション数の設定 テーブルビューでは省略
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    //Item数の設定
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    //セル内に表示するデータの設定
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // cellオブジェクト
+        let cell:customImage = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! customImage
+
+        cell.myitem?.image = UIImage(named: "yesterday.jpg")
+        
+        //　背景色の設定
+        cell.backgroundColor = UIColor.white
+        
+        // 作成したcellオブジェクトを戻り値として返す
+        return cell
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
