@@ -39,8 +39,13 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         
         // 作成したcellオブジェクトを戻り値として返す
         return cell
+        
+        
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItem indexPath: IndexPath) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
