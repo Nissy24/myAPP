@@ -9,6 +9,9 @@
 import UIKit
 
 class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    @IBOutlet weak var myclothes: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +45,9 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         
         
     }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItem indexPath: IndexPath) {
+    
+    // collectionViewがタップされた時発動
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
 

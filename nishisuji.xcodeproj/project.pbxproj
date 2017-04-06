@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B12A36B1E96153100D901A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B12A36A1E96153100D901A8 /* Info.plist */; };
 		2B12C9E01E90D9FA00962F0B /* tansu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12C9DF1E90D9FA00962F0B /* tansu.swift */; };
 		2B12C9E21E90DDDF00962F0B /* clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12C9E11E90DDDF00962F0B /* clothes.swift */; };
 		2B3B50291E94B27900FFE8B4 /* Myfashion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B50271E94B27900FFE8B4 /* Myfashion+CoreDataClass.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B12A36A1E96153100D901A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B12C9DF1E90D9FA00962F0B /* tansu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tansu.swift; sourceTree = "<group>"; };
 		2B12C9E11E90DDDF00962F0B /* clothes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clothes.swift; sourceTree = "<group>"; };
 		2B3B50271E94B27900FFE8B4 /* Myfashion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Myfashion+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 		2B55506A1E88F430004EEEEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B55506C1E88F430004EEEEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B55506F1E88F430004EEEEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2B5550711E88F430004EEEEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5550761E88F430004EEEEF /* nishisujiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nishisujiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B55507A1E88F430004EEEEF /* nishisujiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nishisujiTests.swift; sourceTree = "<group>"; };
 		2B55507C1E88F430004EEEEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 				2B5550691E88F430004EEEEF /* Main.storyboard */,
 				2B55506C1E88F430004EEEEF /* Assets.xcassets */,
 				2B55506E1E88F430004EEEEF /* LaunchScreen.storyboard */,
-				2B5550711E88F430004EEEEF /* Info.plist */,
 				2B8A86551E892D66006BFF70 /* category.swift */,
 				2B6C6EEC1E8A3194005E85BD /* customCell.swift */,
 				2BB527DE1E8B7E08003E2451 /* newFashionViewController.swift */,
@@ -145,6 +145,7 @@
 				2B752BA31E9103C9003B1F71 /* tuika.swift */,
 				2B3B502B1E94C81200FFE8B4 /* customImage.swift */,
 				2BC5D4C91E93634A00852777 /* nishisuji.xcdatamodeld */,
+				2B12A36A1E96153100D901A8 /* Info.plist */,
 			);
 			path = nishisuji;
 			sourceTree = "<group>";
@@ -278,6 +279,7 @@
 				2B5550701E88F430004EEEEF /* LaunchScreen.storyboard in Resources */,
 				2B55506D1E88F430004EEEEF /* Assets.xcassets in Resources */,
 				2B5550941E8919C0004EEEEF /* yesterday.jpg in Resources */,
+				2B12A36B1E96153100D901A8 /* Info.plist in Resources */,
 				2B55506B1E88F430004EEEEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
