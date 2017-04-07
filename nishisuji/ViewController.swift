@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreData
+import Photos
+import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var myimage = NSMutableArray()
 
