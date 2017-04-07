@@ -65,13 +65,13 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
                 let title: String? = result.value(forKey: "title") as? String
                 let saveDate: Date? = result.value(forKey: "saveDate") as? Date
                 let memo: String? = result.value(forKey: "memo") as? String
-                let fashion: String? = result.value(forKey: "selectedPhotoURL") as? String
+                let fashion: String? = result.value(forKey: "fashion") as? String
                 let checkindate: Date? = result.value(forKey: "checkindate") as? Date
                 
                 print("title:\(title) saveDate:\(saveDate) memo:\(memo) fashion:\(fashion)) checkindate:\(checkindate)")
                 
                 // 記入されたタイトル,日付を配列に追加
-                myfashion.add(["title":title,"date":saveDate,"selectedPhotoURL":fashion])
+                myfashion.add(["title":title,"date":saveDate,"fashion":fashion])
                 
             }
         }catch{
@@ -95,17 +95,22 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         let viewContext = appDelegate.persistentContainer.viewContext
         
         // Myitemエンティティオブジェクトを作成
-        let Myitem = NSEntityDescription.entity(forEntityName: "Myitem", in: viewContext)
+        let Myfashion = NSEntityDescription.entity(forEntityName: "Myfashion", in: viewContext)
         
         // Myitemエンティティにレコード（行）を挿入するためのオブジェクトを作成
-        let newRecord = NSManagedObject(entity: Myitem!, insertInto: viewContext)
+        let newRecord = NSManagedObject(entity: Myfashion!, insertInto: viewContext)
+        
+        let myDefault = UserDefaults.standard
+        
+        let huku = myDefault.string(forKey: "selectedPhotoURL")
+        
         
         //値のセット
         newRecord.setValue(mydate.text, forKey: "title") // 値を代入
         newRecord.setValue(Date(), forKey: "saveDate")//値を代入
         newRecord.setValue(Date(), forKey: "checkindate")
         newRecord.setValue(mymemo.text, forKey: "memo")
-        newRecord.setValue(myfashion, forKey: "selectedPhotoURL")
+        newRecord.setValue(huku, forKey: "fashion")
         //newRecord.setValue(myclothes.(何か入れるよ！！！), forKey: "collection")
         
         do {
