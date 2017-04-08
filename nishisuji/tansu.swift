@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreData
+import Photos
+import MobileCoreServices
 
-class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    var myimage = NSMutableArray()
     
     @IBOutlet weak var myclothes: UIImageView!
     
@@ -35,7 +40,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         // cellオブジェクト
         let cell:customImage = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! customImage
 
-        cell.myitem?.image = UIImage(named: "yesterday.jpg")
+       // cell.myitem?.image = UIImage(named: "")
         
         //　背景色の設定
         cell.backgroundColor = UIColor.white
@@ -50,6 +55,46 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    //　配列初期化
+    myimage = NSMutableArray()
+    
+    // AppDelegateを使う用意をしておく
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    // エンティティを操作するためのオブジェクトを作成
+    let viewContext = appDelegate.persistentContainer.viewContext
+    
+    // todayをString型にしてnilをいれる
+    var today: String? = nil
+    
+    // どのエンティティからdataを取得してくるか設定
+    let query: NSFetchRequest<Myitem> = Myitem.fetchRequest()
+    do {
+    //データを一括取得
+    let fetchResults = try! viewContext.fetch(query)
+    // データの取得
+    for result:AnyObject in fetchResults{
+    // todayにnewFashionViewControllerの170行目のstrURLと一緒！！
+    today = result.value(forKey: "collection") as? String
+    }
+    }catch{
+    }
+    
+        if today != nil {
+            
+            let url = URL(string: today as String!)
+            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+            let manager: PHImageManager = PHImageManager()
+            manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+                self.myclothes.image = image
+            }
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

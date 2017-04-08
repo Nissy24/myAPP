@@ -94,7 +94,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         // エンティティを操作するためのオブジェクトを作成
         let viewContext = appDelegate.persistentContainer.viewContext
         
-        // Myitemエンティティオブジェクトを作成
+        // Myfashionエンティティオブジェクトを作成
         let Myfashion = NSEntityDescription.entity(forEntityName: "Myfashion", in: viewContext)
         
         // Myitemエンティティにレコード（行）を挿入するためのオブジェクトを作成
