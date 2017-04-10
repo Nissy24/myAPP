@@ -8,9 +8,12 @@
 
 import UIKit
 
+
 class clothes: UIViewController {
     
     @IBOutlet weak var myLabel: UILabel!
+    
+    @IBOutlet weak var mymemo: UITextView!
     
 
     override func viewDidLoad() {

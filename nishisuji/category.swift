@@ -49,7 +49,7 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         selectedIndex = indexPath.row
         
         // セグエを指定して画面遷移
-        performSegue(withIdentifier: "showSecondView", sender: nil)
+        performSegue(withIdentifier: "showSecondView", sender: indexPath)
         
     }
     
@@ -73,6 +73,16 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         // 次の遷移先の画面のプロパティに、選択された行番号を保存
         selectedIndex = row!
         secondVC.scSeletectedIndex = selectedIndex
+        }else{
+            var indexPath = sender as! IndexPath
+            var row = indexPath.row
+            // 次の遷移先の画面をインスタンス化して取得
+            let secondVC = segue.destination as!
+            tansu
+            
+            // 次の遷移先の画面のプロパティに、選択された行番号を保存
+            selectedIndex = row
+            secondVC.selectedIndex = selectedIndex
         }
         
         

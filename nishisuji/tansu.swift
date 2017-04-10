@@ -13,16 +13,60 @@ import MobileCoreServices
 
 class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子","その他"]
+    
+    // 今日はここをやる
+    var selectedIndex = -1
+    
     var myimage = NSMutableArray()
-    
-    @IBOutlet weak var myclothes: UIImageView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //　配列初期化
+        myimage = NSMutableArray()
+        
+        // AppDelegateを使う用意をしておく
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // エンティティを操作するためのオブジェクトを作成
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        // todayをString型にしてnilをいれる
+        var today: String? = nil
+        // mydateをDate型にしてnilをいれる
+        var mydate: Date? = nil
+        // mycategoryをString型にしてnilをいれる
+        var myhuku: String? = nil
+        
+        // どのエンティティからdataを取得してくるか設定
+        let query: NSFetchRequest<Myitem> = Myitem.fetchRequest()
+        do {
+            //データを一括取得
+            let fetchResults = try! viewContext.fetch(query)
+            // データの取得
+            for result:AnyObject in fetchResults{
+                // todayにnewFashionViewControllerの170行目のstrURLと一緒！！
+                today = result.value(forKey: "collection") as? String
+                mydate = result.value(forKey: "saveDate") as? Date
+                myhuku = result.value(forKey: "title") as? String
+                
+                // if文でカテゴリーがタップしたら別で表示する。
+                if myhuku == mycategory[selectedIndex] {
+                // 記入したタイトル、画像、日付を追加
+                myimage.add(["collection":today,"saveDate":mydate,"title":mycategory])
+                }
+                
+            }
+        }catch{
+        }
+    }
+
     
     //セクション数の設定 テーブルビューでは省略
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -31,7 +75,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     
     //Item数の設定
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return myimage.count
     }
     
     //セル内に表示するデータの設定
@@ -39,7 +83,28 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         
         // cellオブジェクト
         let cell:customImage = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! customImage
-
+        
+        // 配列から画像と日付の情報を取得
+        let dic = myimage[indexPath.row] as! NSDictionary
+        
+        var imageview: String? = dic["collection"] as! String
+        var mydate: Date? = dic["saveDate"] as! Date
+        
+        
+        
+        // 画像の表示
+        if imageview != nil {
+            
+            let url = URL(string: imageview as String!)
+            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+            let manager: PHImageManager = PHImageManager()
+            manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+                cell.myitem?.image = image
+            }
+        }
+        
+        
        // cell.myitem?.image = UIImage(named: "")
         
         //　背景色の設定
@@ -56,45 +121,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    //　配列初期化
-    myimage = NSMutableArray()
     
-    // AppDelegateを使う用意をしておく
-    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    // エンティティを操作するためのオブジェクトを作成
-    let viewContext = appDelegate.persistentContainer.viewContext
-    
-    // todayをString型にしてnilをいれる
-    var today: String? = nil
-    
-    // どのエンティティからdataを取得してくるか設定
-    let query: NSFetchRequest<Myitem> = Myitem.fetchRequest()
-    do {
-    //データを一括取得
-    let fetchResults = try! viewContext.fetch(query)
-    // データの取得
-    for result:AnyObject in fetchResults{
-    // todayにnewFashionViewControllerの170行目のstrURLと一緒！！
-    today = result.value(forKey: "collection") as? String
-    }
-    }catch{
-    }
-    
-        if today != nil {
-            
-            let url = URL(string: today as String!)
-            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-            let manager: PHImageManager = PHImageManager()
-            manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
-                self.myclothes.image = image
-            }
-        }
-    }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
