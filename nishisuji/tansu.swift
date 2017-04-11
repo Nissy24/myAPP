@@ -41,7 +41,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         var today: String? = nil
         // mydateをDate型にしてnilをいれる
         var mydate: Date? = nil
-        // mycategoryをString型にしてnilをいれる
+        // myhukuをString型にしてnilをいれる
         var myhuku: String? = nil
         
         // どのエンティティからdataを取得してくるか設定

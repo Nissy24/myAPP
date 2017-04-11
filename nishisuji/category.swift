@@ -56,12 +56,11 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
     // Segueで画面遷移するとき発動
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // if文でshowSecondViewが押された時のコードを書く
+        // if文でshowTsuikaViewが押された時のコードを書く
         if (segue.identifier! == "showTsuikaView") {
         // タップされたボタンのtableviewの選択行を取得
         var btn = sender as! UIButton
         var cell = btn.superview?.superview as! UITableViewCell
-        //var row = mytableview.indexPathForCell(cell)?.row
         var row = mytableview.indexPath(for: cell)?.row
         // 行数を表示
         print("\(row)");

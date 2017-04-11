@@ -59,6 +59,46 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         //　配列初期化
         myimage = NSMutableArray()
         
+        // dfに詳しい日付を入れる
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        // 今日の日付をデッバックエリアに表示
+        let now = NSDate()
+        let todaypicture = df.string(from: now as Date)
+        
+        print(todaypicture)
+        
+        // 昨日の日付　”
+        let secondpicture = NSDate(timeInterval: -60*60*24*1, since: now as Date)
+        
+        print(secondpicture)
+        
+        // 二日前の日付　”
+        let thirdpicture = NSDate(timeInterval: -60*60*24*2, since: now as Date)
+        
+        print(thirdpicture)
+        
+        // ３日前の日付　”
+        let fourpicture = NSDate(timeInterval: -60*60*24*3, since: now as Date)
+        
+        print(fourpicture)
+        
+        // 4日前の日付　”
+        let fivepicture = NSDate(timeInterval: -60*60*24*4, since: now as Date)
+        
+        print(fivepicture)
+        
+        // 5日前の日付　”
+        let sixpicture = NSDate(timeInterval: -60*60*24*5, since: now as Date)
+        
+        print(sixpicture)
+        
+        // 6日前の日付　”
+        let sevenpicture = NSDate(timeInterval: -60*60*24*6, since: now as Date)
+        
+        print(sevenpicture)
+
         // AppDelegateを使う用意をしておく
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -67,6 +107,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         // todayをString型にしてnilをいれる
         var today: String? = nil
+        
+        // hizukeをDate型にしてnilをいれる
+        var hizuke: Date? = nil
         
         // どのエンティティからdataを取得してくるか設定
         let query: NSFetchRequest<Myfashion> = Myfashion.fetchRequest()
@@ -77,10 +120,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             for result:AnyObject in fetchResults{
                 // todayにnewFashionViewControllerの170行目のstrURLと一緒！！
                 today = result.value(forKey: "fashion") as? String
+                hizuke = result.value(forKey: "saveDate") as? Date
+                
+                
+                
         }
         }catch{
         }
-        
         if today != nil {
         
             let url = URL(string: today as String!)
@@ -89,6 +135,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             let manager: PHImageManager = PHImageManager()
             manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
         self.one.image = image
+        
         }
         two.image = UIImage(named: "")
         

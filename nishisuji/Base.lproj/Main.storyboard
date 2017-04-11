@@ -336,12 +336,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-Cf-OJR">
-                                <rect key="frame" x="274" y="489" width="46" height="30"/>
+                                <rect key="frame" x="282" y="489" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="a"/>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7SZ-Og-UKp">
-                                <rect key="frame" x="0.0" y="64" width="320" height="417"/>
+                                <rect key="frame" x="0.0" y="88" width="320" height="393"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z5x-jA-4q1">
@@ -361,13 +361,16 @@
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3D-ci-myT">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="99"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="ZxR-jt-q98" appends="YES" id="5pf-l2-y7Y"/>
+                                                    </connections>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="100" height="125"/>
                                         <connections>
                                             <outlet property="myitem" destination="R3D-ci-myT" id="rMs-84-7Dh"/>
-                                            <segue destination="SZA-7F-5Pk" kind="show" id="0ZJ-8J-1xa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -382,6 +385,11 @@
                     <navigationItem key="navigationItem" id="Oeb-hc-NjC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5K-SU-vvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZxR-jt-q98">
+                    <connections>
+                        <segue destination="SZA-7F-5Pk" kind="push" id="NdU-l0-8bG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2913.75" y="710.91549295774644"/>
         </scene>
@@ -426,7 +434,6 @@
                                 <rect key="frame" x="40" y="403" width="240" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -436,6 +443,7 @@
                     <navigationItem key="navigationItem" id="kmv-Ji-dnR"/>
                     <connections>
                         <outlet property="myLabel" destination="G5z-Q6-40o" id="jMk-rw-RBk"/>
+                        <outlet property="myhuku" destination="kKR-7W-EQ0" id="nyI-j8-u4g"/>
                         <outlet property="mymemo" destination="AY9-iA-avG" id="Tz8-YO-kLS"/>
                     </connections>
                 </viewController>
@@ -515,7 +523,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fvn-v5-0ev">
                                 <rect key="frame" x="40" y="384" width="240" height="100"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
