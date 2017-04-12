@@ -94,6 +94,9 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         // エンティティを操作するためのオブジェクトを作成
         let viewContext = appDelegate.persistentContainer.viewContext
         
+        // 全部を読み込んで、おんなじ日付のやつを消して、最新だけを貰う
+        
+        
         // Myfashionエンティティオブジェクトを作成
         let Myfashion = NSEntityDescription.entity(forEntityName: "Myfashion", in: viewContext)
         
