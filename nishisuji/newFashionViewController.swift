@@ -186,8 +186,6 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
                             let record = result as! NSManagedObject
                             // 一行ずつ削除
                             viewContext.delete(record)
-                        
-                        
                     }
                 }
             }

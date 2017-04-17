@@ -119,6 +119,8 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     // collectionViewがタップされた時発動
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        print(indexPath.row)
+        
     }
     
     

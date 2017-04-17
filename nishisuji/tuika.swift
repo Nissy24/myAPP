@@ -232,6 +232,22 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
 
     }
     
+    // テキストフィールド入力開始
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldBeginEditing")
+        
+        print(textField.tag)
+        
+            // 日付のtextfield
+            // baseViewの表示
+            UIView.animate(withDuration: 0.5, animations: {() -> Void in
+                self.baseView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - self.baseView.frame.height)
+            })
+            // キーボードを出さないようにする
+            return false
+    }
+
+    // baseViewを表示して、
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         print("textViewShouldBeginEditing\n")
         
@@ -283,6 +299,11 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
         
         mydate.text = strSelectedDate
         
+    }
+    
+    // DatePickerが乗ったViewを隠す
+    func closeDatePicker(sender:UIButton){
+        UIView.animate(withDuration: 0.5, animations: {() -> Void in self.baseView.frame.origin = CGPoint(x: 0, y: self.view.bounds.height)})
     }
     
     func closeKeyboard(_ sender: UIButton){
