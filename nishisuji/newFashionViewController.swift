@@ -28,7 +28,6 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let df = DateFormatter()
         df.dateFormat = "yyyy/MM/dd"
         
@@ -94,9 +93,6 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         // エンティティを操作するためのオブジェクトを作成
         let viewContext = appDelegate.persistentContainer.viewContext
         
-        // 全部を読み込んで、おんなじ日付のやつを消して、最新だけを貰う
-        
-        
         // Myfashionエンティティオブジェクトを作成
         let Myfashion = NSEntityDescription.entity(forEntityName: "Myfashion", in: viewContext)
         
@@ -107,6 +103,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         
         let huku = myDefault.string(forKey: "selectedPhotoURL")
         
+        deletetoday()
         
         //値のセット
         newRecord.setValue(mydate.text, forKey: "title") // 値を代入
@@ -125,6 +122,81 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         }catch{
         }
 
+    }
+    
+    // 全部を読み込んで、おんなじ日付のやつを消して、最新だけを貰う
+    func deletetoday(){
+        //　配列初期化
+        myfashion = NSMutableArray()
+        
+        // dfに詳しい日付を入れる
+        let dfstart = DateFormatter()
+        dfstart.dateFormat = "yyyy-MM-dd 00:00:00"
+        
+        let dfend = DateFormatter()
+        dfend.dateFormat = "yyyy-MM-dd 23:59:59"
+        
+        // 今日の日付の始まりをデッバックエリアに表示
+        let todayDate = NSDate()
+        
+        let todayDateStartTime = dfstart.string(from: todayDate as Date)
+        
+        print(todayDateStartTime)
+        
+        // 今日の日付の終わりをデッバックエリアに表示
+        let todayDateEndTime = dfend.string(from: todayDate as Date)
+        
+        print(todayDateEndTime)
+        
+        
+
+        
+        // AppDelegateを使う用意をしておく
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // エンティティを操作するためのオブジェクトを作成
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        // todayをString型にしてnilをいれる
+        var today: String? = nil
+        
+        // hizukeをDate型にしてnilをいれる
+        var hizuke: Date? = nil
+        
+        let query: NSFetchRequest<Myfashion> = Myfashion.fetchRequest()
+        
+        do {
+            //データを一括取得
+            let fetchResults = try! viewContext.fetch(query)
+            
+            // データの取得
+            for result:AnyObject in fetchResults{
+                let saveDate: Date? = result.value(forKey: "saveDate") as? Date
+                
+                //今日のデータだったら、消す！（最新だけ残す）
+                today = result.value(forKey: "fashion") as? String
+                hizuke = result.value(forKey: "saveDate") as? Date
+                
+                if hizuke != nil && today != nil {
+                    let df = DateFormatter()
+                    df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    
+                    // 本日の写真を表示
+                    if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
+                            let record = result as! NSManagedObject
+                            // 一行ずつ削除
+                            viewContext.delete(record)
+                        
+                        
+                    }
+                }
+            }
+            // 削除した状態を保存
+            try! viewContext.save()
+            
+            // 再読み込み
+            read()
+        }
     }
     
     
@@ -147,7 +219,6 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     
     //カメラロールで写真を選んだ後
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         
         let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
         

@@ -25,6 +25,7 @@
 		2B752BA41E9103C9003B1F71 /* tuika.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B752BA31E9103C9003B1F71 /* tuika.swift */; };
 		2B8093621E8CCC8F006FA676 /* categorydetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8093611E8CCC8F006FA676 /* categorydetail.swift */; };
 		2B8A86561E892D66006BFF70 /* category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A86551E892D66006BFF70 /* category.swift */; };
+		2B9B08A61EA286A000EDBDB8 /* everyday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B08A51EA286A000EDBDB8 /* everyday.swift */; };
 		2BB527DF1E8B7E08003E2451 /* newFashionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB527DE1E8B7E08003E2451 /* newFashionViewController.swift */; };
 		2BC5D4CB1E93634A00852777 /* nishisuji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5D4C91E93634A00852777 /* nishisuji.xcdatamodeld */; };
 		2BC5D4D01E93666700852777 /* Myitem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5D4CC1E93666700852777 /* Myitem+CoreDataClass.swift */; };
@@ -72,6 +73,7 @@
 		2B752BA31E9103C9003B1F71 /* tuika.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tuika.swift; sourceTree = "<group>"; };
 		2B8093611E8CCC8F006FA676 /* categorydetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categorydetail.swift; sourceTree = "<group>"; };
 		2B8A86551E892D66006BFF70 /* category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = category.swift; sourceTree = "<group>"; };
+		2B9B08A51EA286A000EDBDB8 /* everyday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = everyday.swift; sourceTree = "<group>"; };
 		2BB527DE1E8B7E08003E2451 /* newFashionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newFashionViewController.swift; sourceTree = "<group>"; };
 		2BC5D4CA1E93634A00852777 /* nishisuji.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nishisuji.xcdatamodel; sourceTree = "<group>"; };
 		2BC5D4CC1E93666700852777 /* Myitem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Myitem+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				2B3B502B1E94C81200FFE8B4 /* customImage.swift */,
 				2BC5D4C91E93634A00852777 /* nishisuji.xcdatamodeld */,
 				2B12A36A1E96153100D901A8 /* Info.plist */,
+				2B9B08A51EA286A000EDBDB8 /* everyday.swift */,
 			);
 			path = nishisuji;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				2B6C6EEB1E8A2773005E85BD /* ViewController.swift in Sources */,
 				2B12C9E01E90D9FA00962F0B /* tansu.swift in Sources */,
+				2B9B08A61EA286A000EDBDB8 /* everyday.swift in Sources */,
 				2BC5D4D11E93666700852777 /* Myitem+CoreDataProperties.swift in Sources */,
 				2B12C9E21E90DDDF00962F0B /* clothes.swift in Sources */,
 				2B752BA41E9103C9003B1F71 /* tuika.swift in Sources */,

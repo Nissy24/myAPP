@@ -11,7 +11,7 @@ import CoreData
 import Photos
 import MobileCoreServices
 
-class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate {
     
     var myitem = NSMutableArray()
     var selectedDate = Date()
@@ -19,24 +19,81 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
  
     @IBOutlet weak var mymy: UILabel!
     
-    @IBOutlet weak var buydate: UILabel!
+    @IBOutlet weak var mydate: UITextField!
     
     @IBOutlet weak var myclothes: UIImageView!
     
     @IBOutlet weak var mymemo: UITextView!
     
+    @IBOutlet weak var formview: UIView!
     
     var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子","その他"]
     
     // 前画面から行番号を受け取るためのプロパティ
     var scSeletectedIndex = -1
     
+    // datePicekrが乗るView(下に隠しておく)
+    let baseView:UIView = UIView(frame: CGRect(x: 0, y: 720, width: 200, height: 250))
+    
+    let diaryDatePicker:UIDatePicker = UIDatePicker(frame: CGRect(x: 10, y: 20, width: 300, height: 220))
+
+    let mySystemButton:UIButton = UIButton(type: .system)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         read()
-    }
+        
+        // イベントの追加
+        diaryDatePicker.addTarget(self, action: #selector(showDateSelected(sender:)), for: .valueChanged)
+        
+        //baseViewにdatePickerを配置
+        baseView.addSubview(diaryDatePicker)
+        
+        //baseViewにボタンを配置
+        // Systemボタンに配置するx,y座標とサイズを設定.
+        mySystemButton.frame = CGRect(x: self.view.frame.width-60, y: 0, width: 50, height: 20)
+        
+        // Systemボタンにタイトルを設定する.
+        mySystemButton.setTitle("Close", for: .normal)
+        
+        // イベントの追加
+        mySystemButton.addTarget(self, action: #selector(closeDatePickerView(sender:)), for: .touchUpInside)
+        
+        //baseViewにボタンを配置
+        baseView.addSubview(mySystemButton)
+        
+        
+        //下にピッタリ配置、横幅ピッタリの大きさにしておく
+        baseView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height)
+        
+        baseView.frame.size = CGSize(width: self.view.frame.width, height: baseView.frame.height)
+        
+        
+        baseView.backgroundColor = UIColor.gray
+        self.view.addSubview(baseView)
+        
+        
+        //キーボードの上にcloseボタンを配置
+        //ビューを作成する。
+        let upView = UIView()
+        upView.frame.size.height = 60
+        upView.backgroundColor = UIColor.lightGray
+        
+        //「閉じるボタン」を作成する。
+        let closeButton = UIButton(frame:CGRect(x:self.view.bounds.size.width-70, y:0, width:70, height:50))
+        closeButton.setTitle("閉じる", for: .normal)
+        
+        
+        closeButton.addTarget(self, action: #selector(closeKeyboard(_:)), for: .touchUpInside)
+        
+        //ビューに「閉じるボタン」を追加する。
+        upView.addSubview(closeButton)
+       
+        //キーボードのアクセサリにビューを設定する。
+        mymemo.inputAccessoryView = upView
+            }
     
     // 既に存在するデータの読み込み処理
     func read(){
@@ -175,7 +232,65 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
 
     }
     
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        print("textViewShouldBeginEditing\n")
+        
+        print(textView.tag)
+        
+        //キーボードが出てたら閉じる
+        mymemo.resignFirstResponder()
+        
+        //日付のViewも一旦閉じる
+        hideBaseView()
+        
+        
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            
+            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y - 250)
+            
+            
+            
+        }, completion: {finished in print("上に現れました")})
+        return true
+    }
+
+    //baseViewを隠す
+    func hideBaseView(){
+        self.baseView.frame.origin = CGPoint(x: 0, y:self.view.frame.size.height)
+    }
+
+    //DatePickerが載っているViewを閉じる
+    func closeDatePickerView(sender: UIButton){
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            
+            self.baseView.frame.origin = CGPoint(x: 0, y:self.view.frame.size.height)
+            
+            
+            
+        }, completion: {finished in print("下に隠れました")})
+    }
     
+    //DatePickerで、選択している日付を変えた時、日付用のTextFieldに値を表示
+    func showDateSelected(sender:UIDatePicker){
+        
+        // フォーマットを設定
+        let df = DateFormatter()
+        df.dateFormat = "yyyy/MM/dd"
+        
+        print(df.string(from: sender.date))
+        
+        let strSelectedDate = df.string(from: sender.date)
+        
+        mydate.text = strSelectedDate
+        
+    }
+    
+    func closeKeyboard(_ sender: UIButton){
+        mymemo.resignFirstResponder()
+        
+    }
+
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

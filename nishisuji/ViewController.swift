@@ -43,13 +43,14 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBOutlet weak var label7: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // Do any additional setup after loading the view.
         
     }
+    
     
     @IBAction func myaddition(_ sender: UIButton) {
     }
