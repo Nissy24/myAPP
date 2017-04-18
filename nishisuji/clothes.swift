@@ -24,7 +24,13 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate {
 
         // Do any additional setup after loading the view.
         
-               }    
+               }
+    
+    // 画面が表示される度に起動
+    override func viewWillAppear(_ animated: Bool) {
+        print("前の画面から\(selectedIndex)行目が選択されました")
+    }
+
 
     
     override func didReceiveMemoryWarning() {

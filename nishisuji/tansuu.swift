@@ -1,8 +1,8 @@
 //
-//  tansu.swift
+//  tansuu.swift
 //  nishisuji
 //
-//  Created by 西筋啓人 on 2017/04/02.
+//  Created by 西筋啓人 on 2017/04/18.
 //  Copyright © 2017年 Hiroto Nishisuji. All rights reserved.
 //
 
@@ -11,30 +11,35 @@ import CoreData
 import Photos
 import MobileCoreServices
 
-class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+private let reuseIdentifier = "Cell"
+
+class tansuu: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource{
     
     var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子","その他"]
-
+    
     var selectedIndex = -1
     
     var myimage = NSMutableArray()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
     
     // collectionViewが選択された時に発動
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-//        print("\(indexPath.row)行目が選択されました")
-//        
-//        // メンバ変数に行番号を保存
-//        selectedIndex = indexPath.row
-//
-//        // セグエを指定して画面遷移
-//        performSegue(withIdentifier: "hyouzi", sender: indexPath)
+        print("\(indexPath.row)行目が選択されました")
+        
+        // メンバ変数に行番号を保存
+        selectedIndex = indexPath.row
+        
+        // セグエを指定して画面遷移
+        performSegue(withIdentifier: "hyouzi", sender: indexPath)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,28 +74,28 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
                 
                 // if文でカテゴリーがタップしたら別で表示する。
                 if myhuku == mycategory[selectedIndex] {
-                // 記入したタイトル、画像、日付を追加
-                myimage.add(["collection":today,"saveDate":mydate,"title":mycategory])
+                    // 記入したタイトル、画像、日付を追加
+                    myimage.add(["collection":today,"saveDate":mydate,"title":mycategory])
                 }
                 
             }
         }catch{
         }
     }
-
+    
     
     //セクション数の設定 テーブルビューでは省略
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     //Item数の設定
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myimage.count
     }
     
     //セル内に表示するデータの設定
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // cellオブジェクト
         let cell:customImage = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! customImage
@@ -116,7 +121,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         }
         
         
-       // cell.myitem?.image = UIImage(named: "")
+        // cell.myitem?.image = UIImage(named: "")
         
         //　背景色の設定
         cell.backgroundColor = UIColor.white
@@ -128,34 +133,25 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     // collectionViewがタップされた時発動
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         print(indexPath.row)
         
-        // メンバ変数に行番号を保存
-                selectedIndex = indexPath.row
-        
-                // セグエを指定して画面遷移
-                performSegue(withIdentifier: "hyouzi", sender: indexPath)
-        
     }
-    
-    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
+        // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
     */
-
 }

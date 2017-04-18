@@ -49,7 +49,7 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         selectedIndex = indexPath.row
         
         // セグエを指定して画面遷移
-        performSegue(withIdentifier: "showSecondView", sender: indexPath)
+        performSegue(withIdentifier: "SecondView", sender: indexPath)
         
     }
     

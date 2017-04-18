@@ -37,7 +37,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         
         // Do any additional setup after loading the view.
         
-        read()
+//        read()
     }
     
     // 既に存在するデータの読み込み処理
@@ -118,7 +118,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
             try viewContext.save()
             
             // 再読み込み
-            read()
+//            read()
         }catch{
         }
 
@@ -193,7 +193,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
             try! viewContext.save()
             
             // 再読み込み
-            read()
+//            read()
         }
     }
     
