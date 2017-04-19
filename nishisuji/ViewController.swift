@@ -14,6 +14,9 @@ import MobileCoreServices
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var myimage = NSMutableArray()
+    
+    var selectimageIndex = NSDate()
+    
 
     @IBOutlet weak var one: UIImageView!
     
@@ -216,12 +219,69 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                         
                     }
                 }
-        }
+           }
         }catch{
         }
         }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // dfに詳しい日付を入れる
+        let dfstart = DateFormatter()
+        dfstart.dateFormat = "yyyy-MM-dd 00:00:00"
+        
+        let dfend = DateFormatter()
+        dfend.dateFormat = "yyyy-MM-dd 23:59:59"
+        
+        
+        // 今日の日付の始まりをデッバックエリアに表示
+        let todayDate = NSDate()
+   
+        let secondDate = NSDate(timeInterval: -60*60*24*1, since: todayDate as Date)
+        
+        let thirdDate = NSDate(timeInterval: -60*60*24*2, since: todayDate as Date)
+        
+        let fourDate = NSDate(timeInterval: -60*60*24*3, since: todayDate as Date)
+        
+        let fiveDate = NSDate(timeInterval: -60*60*24*4, since: todayDate as Date)
+        
+        let sixDate = NSDate(timeInterval: -60*60*24*5, since: todayDate as Date)
+        
+        let sevenDate = NSDate(timeInterval: -60*60*24*6, since: todayDate as Date)
+        
+        if (segue.identifier! == "1") {
+            let iti = segue.destination as! everyday
+            iti.selectimageIndex = todayDate
+        }
+        if (segue.identifier! == "2") {
+            let ni = segue.destination as! everyday
+            ni.selectimageIndex = secondDate
+            
+        }
+        if (segue.identifier! == "3") {
+            let san = segue.destination as! everyday
+            san.selectimageIndex = thirdDate
+            
+        }
+        if (segue.identifier! == "4") {
+            let yon = segue.destination as! everyday
+            yon.selectimageIndex = fourDate
+        }
+        if (segue.identifier! == "5") {
+            let go = segue.destination as! everyday
+            go.selectimageIndex = fiveDate
+        }
+        if (segue.identifier! == "6") {
+            let roku = segue.destination as! everyday
+            roku.selectimageIndex = sixDate
+        }
+        if (segue.identifier! == "7") {
+            let nana = segue.destination as! everyday
+            nana.selectimageIndex = sevenDate
+        }
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

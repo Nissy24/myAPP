@@ -15,6 +15,8 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     
     var myimage = NSMutableArray()
 
+    var selectimageIndex = NSDate()
+    
     @IBOutlet weak var syasin: UIImageView!
     
     @IBOutlet weak var syousai: UITextView!
@@ -48,77 +50,6 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         
         print(todayDateStartTime)
         
-        // 今日の日付の終わりをデッバックエリアに表示
-        let todayDateEndTime = dfend.string(from: todayDate as Date)
-        
-        print(todayDateEndTime)
-        
-        // 昨日の日付　”
-        let secondDate = NSDate(timeInterval: -60*60*24*1, since: todayDate as Date)
-        
-        let secondDateStartTime = dfstart.string(from: secondDate as Date)
-        
-        print(secondDateStartTime)
-        
-        let secondDateEndTime = dfend.string(from: secondDate as Date)
-        
-        print(secondDateEndTime)
-        
-        // 二日前の日付　”
-        let thirdDate = NSDate(timeInterval: -60*60*24*2, since: todayDate as Date)
-        
-        let thirdDateStartTime = dfstart.string(from: thirdDate as Date)
-        
-        print(thirdDateStartTime)
-        
-        let thirdDateEndTime = dfend.string(from: thirdDate as Date)
-        
-        print(thirdDateEndTime)
-        
-        // ３日前の日付　”
-        let fourDate = NSDate(timeInterval: -60*60*24*3, since: todayDate as Date)
-        
-        let fourDateStartTime = dfstart.string(from: fourDate as Date)
-        
-        print(fourDateStartTime)
-        
-        let fourDateEndTime = dfend.string(from: fourDate as Date)
-        
-        print(fourDateEndTime)
-        
-        // 4日前の日付　”
-        let fiveDate = NSDate(timeInterval: -60*60*24*4, since: todayDate as Date)
-        
-        let fiveDateStartTime = dfstart.string(from: fiveDate as Date)
-        
-        print(fiveDateStartTime)
-        
-        let fiveDateEndTime = dfend.string(from: fiveDate as Date)
-        
-        print(fiveDateEndTime)
-        
-        // 5日前の日付　”
-        let sixDate = NSDate(timeInterval: -60*60*24*5, since: todayDate as Date)
-        
-        let sixDateStartTime = dfstart.string(from: sixDate as Date)
-        
-        print(sixDateStartTime)
-        
-        let sixDateEndTime = dfend.string(from: sixDate as Date)
-        
-        print(sixDateEndTime)
-        
-        // 6日前の日付　”
-        let sevenDate = NSDate(timeInterval: -60*60*24*6, since: todayDate as Date)
-        
-        let sevenDateStartTime = dfstart.string(from: sevenDate as Date)
-        
-        print(sevenDateStartTime)
-        
-        let sevenDateEndTime = dfend.string(from: sevenDate as Date)
-        
-        print(sevenDateEndTime)
-        
         // AppDelegateを使う用意をしておく
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -141,39 +72,6 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 
                 hizuke = result.value(forKey: "saveDate") as? Date
                 today = result.value(forKey: "fashion") as? String
-                
-                if (hizuke! == todayDate as Date){
-                
-                if hizuke != nil && today != nil {
-                    
-                    let url = URL(string: today as String!)
-                    let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-                    let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-                    let manager: PHImageManager = PHImageManager()
-                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
-                    
-                        let df = DateFormatter()
-                        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                        self.syasin.image = image
-                    }
-                    }
-                    }
-                if (hizuke! == secondDate as Date){
-                    
-                    if hizuke != nil && today != nil {
-                        
-                        let url = URL(string: today as String!)
-                        let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-                        let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-                        let manager: PHImageManager = PHImageManager()
-                        manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
-                            
-                            let df = DateFormatter()
-                            df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                            self.syasin.image = image
-                        }
-                    }
-                }
 
                     }
                 }

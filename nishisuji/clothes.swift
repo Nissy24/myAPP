@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
+import Photos
+import MobileCoreServices
 
 
-class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate {
+class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     @IBOutlet weak var myLabel: UILabel!
     
@@ -19,12 +22,14 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate {
     
     var selectedIndex = -1
 
+    var myimage = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-               }
+        }
     
     // 画面が表示される度に起動
     override func viewWillAppear(_ animated: Bool) {
