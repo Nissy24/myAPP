@@ -175,16 +175,19 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 if hizuke != nil && today != nil {
                     
                     let url = URL(string: today as String!)
+                    var options:PHImageRequestOptions = PHImageRequestOptions()
+                    options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
                     let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
                     let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
                     let manager: PHImageManager = PHImageManager()
-                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
                         
                         // 保存されているデータをデバッグエリアに表示
                         print(hizuke)
                         
                         let df = DateFormatter()
                         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                        
                         
                         // 本日の写真を表示
                         if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
@@ -226,14 +229,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // dfに詳しい日付を入れる
-        let dfstart = DateFormatter()
-        dfstart.dateFormat = "yyyy-MM-dd 00:00:00"
-        
-        let dfend = DateFormatter()
-        dfend.dateFormat = "yyyy-MM-dd 23:59:59"
-        
         
         // 今日の日付の始まりをデッバックエリアに表示
         let todayDate = NSDate()

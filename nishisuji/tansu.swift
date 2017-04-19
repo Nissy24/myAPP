@@ -19,6 +19,8 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     
     var myimage = NSMutableArray()
 
+    var selectimageIndex = NSDate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -140,7 +142,12 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier! == "hyouzi") {
+            let hukuitem = segue.destination as! clothes
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

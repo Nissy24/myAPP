@@ -45,6 +45,9 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
         // Do any additional setup after loading the view.
         read()
         
+        // datePickerのmodeを日付のみに設定
+        diaryDatePicker.datePickerMode = UIDatePickerMode.date
+        
         // イベントの追加
         diaryDatePicker.addTarget(self, action: #selector(showDateSelected(sender:)), for: .valueChanged)
         

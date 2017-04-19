@@ -43,12 +43,9 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         let dfend = DateFormatter()
         dfend.dateFormat = "yyyy-MM-dd 23:59:59"
         
-        // 今日の日付の始まりをデッバックエリアに表示
-        let todayDate = NSDate()
+        let todayDateStartTime = dfstart.string(from: selectimageIndex as Date)
         
-        let todayDateStartTime = dfstart.string(from: todayDate as Date)
-        
-        print(todayDateStartTime)
+        let todayDateEndTime = dfend.string(from: selectimageIndex as Date)
         
         // AppDelegateを使う用意をしておく
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -72,9 +69,28 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 
                 hizuke = result.value(forKey: "saveDate") as? Date
                 today = result.value(forKey: "fashion") as? String
-
+                
+                // 日付を判断してそれにあった画像を表示
+                if hizuke != nil && today != nil {
+                    
+                    let url = URL(string: today as String!)
+                    let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+                    let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+                    let manager: PHImageManager = PHImageManager()
+                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+                let df = DateFormatter()
+                df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                
+                // 本日の写真を表示
+                if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
+                    self.syasin.image = image
+                        }
                     }
                 }
+                }
+                }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
