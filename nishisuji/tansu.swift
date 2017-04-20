@@ -25,6 +25,9 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(myimage)
+        
+        read()
     }
     
     // collectionViewが選択された時に発動
@@ -39,8 +42,10 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
 //        performSegue(withIdentifier: "hyouzi", sender: indexPath)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+//    override func viewWillAppear(_ animated: Bool) {
+    func read(){
         
+    
         //　配列初期化
         myimage = NSMutableArray()
         
@@ -57,6 +62,9 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         // myhukuをString型にしてnilをいれる
         var myhuku: String? = nil
         
+        // hitokotoをString型にしてnilをいれる
+        var hitokoto: String? = nil
+        
         // どのエンティティからdataを取得してくるか設定
         let query: NSFetchRequest<Myitem> = Myitem.fetchRequest()
         do {
@@ -68,11 +76,12 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
                 today = result.value(forKey: "collection") as? String
                 mydate = result.value(forKey: "saveDate") as? Date
                 myhuku = result.value(forKey: "title") as? String
+                hitokoto = result.value(forKey: "memo") as? String
                 
                 // if文でカテゴリーがタップしたら別で表示する。
                 if myhuku == mycategory[selectedIndex] {
                 // 記入したタイトル、画像、日付を追加
-                myimage.add(["collection":today,"saveDate":mydate,"title":mycategory])
+                myimage.add(["collection":today,"saveDate":mydate,"title":mycategory,"memo":hitokoto])
                 }
                 
             }
@@ -138,7 +147,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
                 selectedIndex = indexPath.row
         
                 // セグエを指定して画面遷移
-                performSegue(withIdentifier: "hyouzi", sender: indexPath)
+                performSegue(withIdentifier: "hyouzi", sender: nil)
         
     }
     
@@ -146,6 +155,10 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         
         if (segue.identifier! == "hyouzi") {
             let hukuitem = segue.destination as! clothes
+            
+            hukuitem.scmemo = selectedIndex
+        }else{
+            
         }
     }
 

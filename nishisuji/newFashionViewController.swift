@@ -92,7 +92,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         upView.addSubview(closeButton)
         
         //キーボードのアクセサリにビューを設定する。
-        //mymemo.inputAccessoryView = upView
+        mydetail.inputAccessoryView = upView
     }
 
     // 既に存在するデータの読み込み処理
@@ -330,7 +330,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         print(textView.tag)
         
         //キーボードが出てたら閉じる
-        mymemo.resignFirstResponder()
+        mydetail.resignFirstResponder()
         
         //日付のViewも一旦閉じる
         hideBaseView()
@@ -348,15 +348,15 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     
     //baseViewを隠す
     func hideBaseView(){
-        self.mymemo.frame.origin = CGPoint(x: 0, y:self.view.frame.size.height)
+        self.mydetail.frame.origin = CGPoint(x: 0, y:self.view.frame.size.height)
     }
 
     
     func closeKeyboard(_ sender: UIButton){
-        mymemo.resignFirstResponder()
+        mydetail.resignFirstResponder()
         
         //formViewを元に戻す
-        mymemo.resignFirstResponder()
+        mydetail.resignFirstResponder()
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             
             self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y + 250)

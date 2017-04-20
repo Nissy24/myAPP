@@ -129,7 +129,7 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
                 print("title:\(title) saveDate:\(saveDate) memo:\(memo) collection:\(collection) checkindate:\(checkindate)")
                 
                 // 記入されたタイトル,日付を配列に追加
-                myitem.add(["title":title,"date":saveDate,"collection":collection])
+                myitem.add(["title":title,"date":saveDate,"collection":collection,"memo":memo])
                 
             }
         }catch{
