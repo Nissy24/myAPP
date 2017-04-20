@@ -11,7 +11,7 @@ import Photos
 import MobileCoreServices
 import CoreData
 
-class newFashionViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class newFashionViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate{
     
     var myfashion = NSMutableArray()
     var selectedDate = Date()
@@ -24,6 +24,15 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     @IBOutlet weak var mydate: UILabel!
     
     @IBOutlet weak var mymemo: UILabel!
+    
+    @IBOutlet weak var formview: UIView!
+    
+    let mySystemButton:UIButton = UIButton(type: .system)
+    
+    // datePicekrが乗るView(下に隠しておく)
+    let baseView:UIView = UIView(frame: CGRect(x: 0, y: 720, width: 200, height: 250))
+    
+    let diaryDatePicker:UIDatePicker = UIDatePicker(frame: CGRect(x: 10, y: 20, width: 300, height: 220))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +47,54 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         // Do any additional setup after loading the view.
         
 //        read()
+        
+        // datePickerのmodeを日付のみに設定
+        diaryDatePicker.datePickerMode = UIDatePickerMode.date
+        
+        //baseViewにdatePickerを配置
+        baseView.addSubview(diaryDatePicker)
+        
+        //baseViewにボタンを配置
+        // Systemボタンに配置するx,y座標とサイズを設定.
+        mySystemButton.frame = CGRect(x: self.view.frame.width-60, y: 0, width: 50, height: 20)
+        
+        // Systemボタンにタイトルを設定する.
+        mySystemButton.setTitle("Close", for: .normal)
+        
+        //baseViewにボタンを配置
+        baseView.addSubview(mySystemButton)
+        
+        
+        //下にピッタリ配置、横幅ピッタリの大きさにしておく
+        baseView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height)
+        
+        baseView.frame.size = CGSize(width: self.view.frame.width, height: baseView.frame.height)
+        
+        
+        baseView.backgroundColor = UIColor.gray
+        self.view.addSubview(baseView)
+        
+        
+        //キーボードの上にcloseボタンを配置
+        //ビューを作成する。
+        let upView = UIView()
+        upView.frame.size.height = 60
+        upView.backgroundColor = UIColor.lightGray
+        
+        //「閉じるボタン」を作成する。
+        let closeButton = UIButton(frame:CGRect(x:self.view.bounds.size.width-70, y:0, width:70, height:50))
+        closeButton.setTitle("閉じる", for: .normal)
+        
+        
+        closeButton.addTarget(self, action: #selector(closeKeyboard(_:)), for: .touchUpInside)
+        
+        //ビューに「閉じるボタン」を追加する。
+        upView.addSubview(closeButton)
+        
+        //キーボードのアクセサリにビューを設定する。
+        //mymemo.inputAccessoryView = upView
     }
-    
+
     // 既に存在するデータの読み込み処理
     func read(){
         
@@ -218,6 +273,8 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     //カメラロールで写真を選んだ後
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        self.dismiss(animated: true, completion: nil)
+        
         let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
         
         let strURL:String = assetURL.description
@@ -250,6 +307,67 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
             }
     }
     }
+    
+    // テキストフィールド入力開始
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldBeginEditing")
+        
+        print(textField.tag)
+        
+        // 日付のtextfield
+        // baseViewの表示
+        UIView.animate(withDuration: 0.5, animations: {() -> Void in
+            self.baseView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - self.baseView.frame.height)
+        })
+        // キーボードを出さないようにする
+        return false
+    }
+    
+    // baseViewを表示して、
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        print("textViewShouldBeginEditing\n")
+        
+        print(textView.tag)
+        
+        //キーボードが出てたら閉じる
+        mymemo.resignFirstResponder()
+        
+        //日付のViewも一旦閉じる
+        hideBaseView()
+        
+        
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            
+            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y - 250)
+            
+            
+            
+        }, completion: {finished in print("上に現れました")})
+        return true
+    }
+    
+    //baseViewを隠す
+    func hideBaseView(){
+        self.mymemo.frame.origin = CGPoint(x: 0, y:self.view.frame.size.height)
+    }
+
+    
+    func closeKeyboard(_ sender: UIButton){
+        mymemo.resignFirstResponder()
+        
+        //formViewを元に戻す
+        mymemo.resignFirstResponder()
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            
+            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y + 250)
+            
+            
+            
+        }, completion: {finished in print("上に現れました")})
+    }
+
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -96,6 +96,7 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
        
         //キーボードのアクセサリにビューを設定する。
         mymemo.inputAccessoryView = upView
+        
             }
     
     // 既に存在するデータの読み込み処理
@@ -199,6 +200,7 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
     //カメラロールで写真を選んだ後
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        imagePicker.dismiss(animated: true, completion: nil)
         
         let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
         
@@ -312,6 +314,15 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
     func closeKeyboard(_ sender: UIButton){
         mymemo.resignFirstResponder()
         
+        //formViewを元に戻す
+        mymemo.resignFirstResponder()
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            
+            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y + 250)
+            
+            
+            
+        }, completion: {finished in print("上に現れました")})
     }
 
 
