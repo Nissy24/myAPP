@@ -239,7 +239,7 @@
 				TargetAttributes = {
 					2B5550611E88F430004EEEEF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MEW6JDZX93;
+						DevelopmentTeam = 5339BL2S95;
 						ProvisioningStyle = Automatic;
 					};
 					2B5550751E88F430004EEEEF = {
@@ -475,10 +475,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MEW6JDZX93;
+				DEVELOPMENT_TEAM = 5339BL2S95;
 				INFOPLIST_FILE = nishisuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishisuji;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishinishi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -488,10 +488,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MEW6JDZX93;
+				DEVELOPMENT_TEAM = 5339BL2S95;
 				INFOPLIST_FILE = nishisuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishisuji;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishinishi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

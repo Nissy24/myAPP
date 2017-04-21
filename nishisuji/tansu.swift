@@ -147,7 +147,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
                 selectedIndex = indexPath.row
         
                 // セグエを指定して画面遷移
-                performSegue(withIdentifier: "hyouzi", sender: nil)
+                performSegue(withIdentifier: "hyouzi", sender: indexPath)
         
     }
     
@@ -156,12 +156,12 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         if (segue.identifier! == "hyouzi") {
             let hukuitem = segue.destination as! clothes
             
+//私が書きました
             hukuitem.scmemo = selectedIndex
-        }else{
-            
-        }
+      
     }
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -30,19 +30,12 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        read()
         
-        let dic = myimage[scmemo] as! NSDictionary
-        
-        mymemo?.text = dic["memo"] as! String
- 
-        
-        }
+    }
     
     // 画面が表示される度に起動
-//    override func viewWillAppear(_ animated: Bool) {
-    func read(){
+    override func viewWillAppear(_ animated: Bool) {
+        
         print("前の画面から\(selectedIndex)行目が選択されました")
         
         //　配列初期化
@@ -74,6 +67,9 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
         // hitokotoをString型にしてnilをいれる
         var hitokoto: String? = nil
         
+        // mumuをDate型にしてnilをいれる
+        var mumu: Date? = nil
+        
         // どのエンティティからdataを取得してくるか設定
         let query: NSFetchRequest<Myitem> = Myitem.fetchRequest()
         do {
@@ -85,6 +81,17 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                 hizuke = result.value(forKey: "saveDate") as? Date
                 today = result.value(forKey: "collection") as? String
                 hitokoto = result.value(forKey: "memo") as? String
+                mumu = result.value(forKey: "checkindate") as? Date
+                
+                mymemo?.text = hitokoto
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy/MM/dd"
+                let dateString: String = dateFormatter.string(from: mumu!)
+                
+                myLabel?.text = dateString
+                
+                
                 
                 // 日付を判断してそれにあった画像を表示
                 if hizuke != nil && today != nil {
@@ -100,13 +107,11 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                         // 本日の写真を表示
                         if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
                             self.myhuku.image = image
+                            
+                            
                         }
                     }
                 }
-                
-//                let dic = myimage[scmemo] as! NSDictionary
-//                
-//                mymemo?.text = dic["memo"] as! String
                 
             }
         }catch{
