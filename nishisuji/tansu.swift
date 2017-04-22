@@ -113,7 +113,6 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         var mydate: Date? = dic["saveDate"] as! Date
         
         
-        
         // 画像の表示
         if imageview != nil {
             
@@ -123,6 +122,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
             let manager: PHImageManager = PHImageManager()
             manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
                 cell.myitem?.image = image
+                
             }
         }
         

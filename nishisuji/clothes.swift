@@ -83,6 +83,10 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                 hitokoto = result.value(forKey: "memo") as? String
                 mumu = result.value(forKey: "checkindate") as? Date
                 
+                self.mymemo.layer.cornerRadius = 20
+                
+                self.mymemo.layer.masksToBounds = true
+                
                 // hitokotoをmymemoに代入
                 mymemo?.text = hitokoto
                 

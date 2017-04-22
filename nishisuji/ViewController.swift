@@ -189,6 +189,33 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                         let df = DateFormatter()
                         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
                         
+                        self.one.layer.cornerRadius = 30
+                        
+                        self.one.layer.masksToBounds = true
+                        
+                        self.two.layer.cornerRadius = 30
+                        
+                        self.two.layer.masksToBounds = true
+                        
+                        self.three.layer.cornerRadius = 30
+                        
+                        self.three.layer.masksToBounds = true
+                        
+                        self.four.layer.cornerRadius = 30
+                        
+                        self.four.layer.masksToBounds = true
+                        
+                        self.five.layer.cornerRadius = 30
+                        
+                        self.five.layer.masksToBounds = true
+                        
+                        self.six.layer.cornerRadius = 30
+                        
+                        self.six.layer.masksToBounds = true
+                        
+                        self.seven.layer.cornerRadius = 30
+                        
+                        self.seven.layer.masksToBounds = true
                         
                         // 本日の写真を表示
                         if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){

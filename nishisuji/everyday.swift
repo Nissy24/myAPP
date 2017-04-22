@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Photos
 import MobileCoreServices
+import Accounts
 
 class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
     
@@ -78,12 +79,18 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 today = result.value(forKey: "fashion") as? String
                 hitokoto = result.value(forKey: "memo") as? String
                 
+                self.syousai.layer.cornerRadius = 20
+                
+                self.syousai.layer.masksToBounds = true
+                
                 syousai?.text = hitokoto
                 
                 // 日付を判断してそれにあった画像を表示
                 if hizuke != nil && today != nil {
                     
                     let url = URL(string: today as String!)
+                    var options:PHImageRequestOptions = PHImageRequestOptions()
+                    options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
                     let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
                     let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
                     let manager: PHImageManager = PHImageManager()
@@ -103,6 +110,18 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         
     }
 
+    @IBAction func myshare(_ sender: UIBarButtonItem) {
+        
+        // 初期化処理 view
+        let activityVC = UIActivityViewController(activityItems: [syasin.image], applicationActivities: nil)
+        
+        // UIActivityViewControllerを表示
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
+
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
