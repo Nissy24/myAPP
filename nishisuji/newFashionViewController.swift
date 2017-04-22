@@ -34,6 +34,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     
     let diaryDatePicker:UIDatePicker = UIDatePicker(frame: CGRect(x: 10, y: 20, width: 300, height: 220))
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,9 +45,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
 
         mydate.text = df.string(from: Date())
         
-        // Do any additional setup after loading the view.
-        
-//        read()
+        read()
         
         // datePickerのmodeを日付のみに設定
         diaryDatePicker.datePickerMode = UIDatePickerMode.date
@@ -166,8 +165,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         newRecord.setValue(Date(), forKey: "checkindate")
         newRecord.setValue(mymemo.text, forKey: "memo")
         newRecord.setValue(huku, forKey: "fashion")
-        //newRecord.setValue(myclothes.(何か入れるよ！！！), forKey: "collection")
-        
+                
         do {
             // レコード（行）の即時保存
             try viewContext.save()
@@ -273,7 +271,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     //カメラロールで写真を選んだ後
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        self.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
         
         let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
         
@@ -346,9 +344,10 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         return true
     }
     
+    
     //baseViewを隠す
     func hideBaseView(){
-        self.mydetail.frame.origin = CGPoint(x: 0, y:self.view.frame.size.height)
+        self.baseView.frame.origin = CGPoint(x: 0, y:self.view.frame.size.height)
     }
 
     
@@ -365,8 +364,8 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
             
         }, completion: {finished in print("上に現れました")})
     }
-
     
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

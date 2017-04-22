@@ -267,7 +267,7 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
         
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             
-            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y - 250)
+            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y - 263)
             
             
             
@@ -318,7 +318,7 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
         mymemo.resignFirstResponder()
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             
-            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y + 250)
+            self.formview.frame.origin = CGPoint(x: 5, y:self.formview.frame.origin.y + 263)
             
             
             

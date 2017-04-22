@@ -58,6 +58,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBAction func myaddition(_ sender: UIButton) {
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         
         //　配列初期化

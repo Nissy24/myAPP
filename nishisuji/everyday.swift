@@ -11,10 +11,14 @@ import CoreData
 import Photos
 import MobileCoreServices
 
-class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
     
     var myimage = NSMutableArray()
 
+    var selectedIndex = -1
+    
+    var scmemo:Int = -1
+    
     var selectimageIndex = NSDate()
     
     @IBOutlet weak var syasin: UIImageView!
@@ -59,6 +63,9 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         // todayをString型にしてnilをいれる
         var today: String? = nil
         
+        // hitokotoをString型にしてnilをいれる
+        var hitokoto: String? = nil
+        
         // どのエンティティからdataを取得してくるか設定
         let query: NSFetchRequest<Myfashion> = Myfashion.fetchRequest()
         do {
@@ -69,6 +76,9 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 
                 hizuke = result.value(forKey: "saveDate") as? Date
                 today = result.value(forKey: "fashion") as? String
+                hitokoto = result.value(forKey: "memo") as? String
+                
+                syousai?.text = hitokoto
                 
                 // 日付を判断してそれにあった画像を表示
                 if hizuke != nil && today != nil {

@@ -83,6 +83,7 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                 hitokoto = result.value(forKey: "memo") as? String
                 mumu = result.value(forKey: "checkindate") as? Date
                 
+                // hitokotoをmymemoに代入
                 mymemo?.text = hitokoto
                 
                 let dateFormatter = DateFormatter()
