@@ -189,6 +189,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                         let df = DateFormatter()
                         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
                         
+                        // imageを角丸にする
                         self.one.layer.cornerRadius = 30
                         
                         self.one.layer.masksToBounds = true

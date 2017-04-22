@@ -31,10 +31,20 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
+        }
     
     // 画面が表示される度に起動
     override func viewWillAppear(_ animated: Bool) {
+        
+        // memoの枠線の色と大きさを設定
+        self.mymemo.layer.borderColor = UIColor.black.cgColor
+        self.mymemo.layer.borderWidth = 1
+        // memoeを角丸にする
+        self.mymemo.layer.cornerRadius = 20
+        
+        self.mymemo.layer.masksToBounds = true
+        
+
         
         print("前の画面から\(selectedIndex)行目が選択されました")
         
@@ -82,10 +92,7 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                 today = result.value(forKey: "collection") as? String
                 hitokoto = result.value(forKey: "memo") as? String
                 mumu = result.value(forKey: "checkindate") as? Date
-                
-                self.mymemo.layer.cornerRadius = 20
-                
-                self.mymemo.layer.masksToBounds = true
+               
                 
                 // hitokotoをmymemoに代入
                 mymemo?.text = hitokoto

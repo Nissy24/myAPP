@@ -47,6 +47,14 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         
         read()
         
+        // memoの枠線の色と大きさを設定
+        self.mydetail.layer.borderColor = UIColor.black.cgColor
+        self.mydetail.layer.borderWidth = 1
+        // memoeを角丸にする
+        self.mydetail.layer.cornerRadius = 20
+        
+        self.mydetail.layer.masksToBounds = true
+        
         // datePickerのmodeを日付のみに設定
         diaryDatePicker.datePickerMode = UIDatePickerMode.date
         

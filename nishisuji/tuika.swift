@@ -41,6 +41,16 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // memoの枠線の色と大きさを設定
+        self.mymemo.layer.borderColor = UIColor.black.cgColor
+        self.mymemo.layer.borderWidth = 1
+        // memoeを角丸にする
+        self.mymemo.layer.cornerRadius = 20
+        
+        self.mymemo.layer.masksToBounds = true
+        
+
 
         // Do any additional setup after loading the view.
         read()

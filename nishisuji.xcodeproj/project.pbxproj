@@ -20,6 +20,8 @@
 		2B55507B1E88F430004EEEEF /* nishisujiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55507A1E88F430004EEEEF /* nishisujiTests.swift */; };
 		2B5550861E88F430004EEEEF /* nishisujiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5550851E88F430004EEEEF /* nishisujiUITests.swift */; };
 		2B5550941E8919C0004EEEEF /* yesterday.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B5550931E8919C0004EEEEF /* yesterday.jpg */; };
+		2B640DC41EABDD4200039039 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B640DC31EABDD4200039039 /* 01.png */; };
+		2B640DC61EABDD4B00039039 /* 03.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B640DC51EABDD4B00039039 /* 03.png */; };
 		2B6C6EEB1E8A2773005E85BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6C6EEA1E8A2773005E85BD /* ViewController.swift */; };
 		2B6C6EED1E8A3194005E85BD /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6C6EEC1E8A3194005E85BD /* customCell.swift */; };
 		2B752BA41E9103C9003B1F71 /* tuika.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B752BA31E9103C9003B1F71 /* tuika.swift */; };
@@ -68,6 +70,8 @@
 		2B5550851E88F430004EEEEF /* nishisujiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nishisujiUITests.swift; sourceTree = "<group>"; };
 		2B5550871E88F430004EEEEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5550931E8919C0004EEEEF /* yesterday.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yesterday.jpg; sourceTree = "<group>"; };
+		2B640DC31EABDD4200039039 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01.png; path = ../../../Downloads/01.png; sourceTree = "<group>"; };
+		2B640DC51EABDD4B00039039 /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 03.png; path = ../../../Downloads/03.png; sourceTree = "<group>"; };
 		2B6C6EEA1E8A2773005E85BD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B6C6EEC1E8A3194005E85BD /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
 		2B752BA31E9103C9003B1F71 /* tuika.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tuika.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				2BC5D4CC1E93666700852777 /* Myitem+CoreDataClass.swift */,
 				2BC5D4CD1E93666700852777 /* Myitem+CoreDataProperties.swift */,
 				2B5550931E8919C0004EEEEF /* yesterday.jpg */,
+				2B640DC31EABDD4200039039 /* 01.png */,
+				2B640DC51EABDD4B00039039 /* 03.png */,
 				2B5550641E88F430004EEEEF /* nishisuji */,
 				2B5550791E88F430004EEEEF /* nishisujiTests */,
 				2B5550841E88F430004EEEEF /* nishisujiUITests */,
@@ -279,6 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B640DC61EABDD4B00039039 /* 03.png in Resources */,
+				2B640DC41EABDD4200039039 /* 01.png in Resources */,
 				2B5550701E88F430004EEEEF /* LaunchScreen.storyboard in Resources */,
 				2B55506D1E88F430004EEEEF /* Assets.xcassets in Resources */,
 				2B5550941E8919C0004EEEEF /* yesterday.jpg in Resources */,
