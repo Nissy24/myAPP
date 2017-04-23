@@ -132,8 +132,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
                 print("title:\(title) saveDate:\(saveDate) memo:\(memo) fashion:\(fashion)) checkindate:\(checkindate)")
                 
                 // 記入されたタイトル,日付を配列に追加
-                myfashion.add(["title":title,"date":saveDate,"fashion":fashion])
-                
+                myfashion.add(["title":title,"date":saveDate,"fashion":fashion,"checkindeate":checkindate])
             }
         }catch{
         }

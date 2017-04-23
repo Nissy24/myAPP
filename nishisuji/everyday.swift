@@ -26,6 +26,8 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     
     @IBOutlet weak var syousai: UITextView!
     
+    @IBOutlet weak var mydatee: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -67,6 +69,9 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         // hitokotoをString型にしてnilをいれる
         var hitokoto: String? = nil
         
+        // daydayをDate型にしてnilをいれる
+        var dayday: String? = nil
+        
         // どのエンティティからdataを取得してくるか設定
         let query: NSFetchRequest<Myfashion> = Myfashion.fetchRequest()
         do {
@@ -78,6 +83,7 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 hizuke = result.value(forKey: "saveDate") as? Date
                 today = result.value(forKey: "fashion") as? String
                 hitokoto = result.value(forKey: "memo") as? String
+                dayday = result.value(forKey: "checkindate")
                 
                 self.syousai.layer.cornerRadius = 20
                 

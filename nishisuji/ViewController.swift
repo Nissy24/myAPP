@@ -52,6 +52,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 
         // Do any additional setup after loading the view.
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "haikei.png")!)
     }
     
     
@@ -227,6 +228,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                         if (df.date(from: secondDateStartTime)! < hizuke! && df.date(from: secondDateEndTime)! > hizuke!){
                             self.two.image = image
                         }
+                        
                         // 二日前の写真を表示
                         if (df.date(from: thirdDateStartTime)! < hizuke! && df.date(from: thirdDateEndTime)! > hizuke!){
                             self.three.image = image
