@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82N-kc-aUa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myfashionselect.png" translatesAutoresizingMaskIntoConstraints="NO" id="82N-kc-aUa">
                                 <rect key="frame" x="40" y="64" width="240" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -624,7 +624,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB2-Rn-5UT">
-                                        <rect key="frame" x="40" y="317" width="150" height="31"/>
+                                        <rect key="frame" x="40" y="332" width="150" height="16"/>
                                         <attributedString key="attributedText">
                                             <fragment content="買った日：">
                                                 <attributes>
@@ -635,7 +635,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBB-0E-9Ph">
-                                        <rect key="frame" x="138" y="276" width="182" height="44"/>
+                                        <rect key="frame" x="138" y="291" width="182" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -665,7 +665,7 @@
                                         </connections>
                                     </textView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sfQ-Xu-Aqj">
-                                        <rect key="frame" x="138" y="318" width="142" height="30"/>
+                                        <rect key="frame" x="138" y="333" width="142" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="142" id="AA1-1l-QJd"/>
                                         </constraints>
@@ -677,7 +677,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdi-fm-WCt">
-                                        <rect key="frame" x="40" y="282" width="150" height="33"/>
+                                        <rect key="frame" x="40" y="297" width="150" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="Czv-CF-559"/>
                                             <constraint firstAttribute="height" constant="33" id="NyU-us-WhJ"/>
@@ -691,8 +691,8 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lWW-QS-gDG">
-                                        <rect key="frame" x="62" y="25" width="197" height="249"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myitemselect.png" translatesAutoresizingMaskIntoConstraints="NO" id="lWW-QS-gDG">
+                                        <rect key="frame" x="62" y="25" width="197" height="264"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="RkK-Uz-0xW" appends="YES" id="JDb-Vb-ZgE"/>
@@ -857,6 +857,8 @@
     <resources>
         <image name="01.png" width="50" height="50"/>
         <image name="03.png" width="64" height="64"/>
+        <image name="myfashionselect.png" width="594" height="1180"/>
+        <image name="myitemselect.png" width="1122" height="1098"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7v8-4O-QgN"/>

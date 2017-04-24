@@ -70,7 +70,7 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         var hitokoto: String? = nil
         
         // daydayをDate型にしてnilをいれる
-        var dayday: String? = nil
+        var dayday: Date? = nil
         
         // どのエンティティからdataを取得してくるか設定
         let query: NSFetchRequest<Myfashion> = Myfashion.fetchRequest()
@@ -83,13 +83,15 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 hizuke = result.value(forKey: "saveDate") as? Date
                 today = result.value(forKey: "fashion") as? String
                 hitokoto = result.value(forKey: "memo") as? String
-                dayday = result.value(forKey: "checkindate")
+                dayday = result.value(forKey: "checkindate") as? Date
                 
                 self.syousai.layer.cornerRadius = 20
                 
                 self.syousai.layer.masksToBounds = true
                 
                 syousai?.text = hitokoto
+                
+                
                 
                 // 日付を判断してそれにあった画像を表示
                 if hizuke != nil && today != nil {

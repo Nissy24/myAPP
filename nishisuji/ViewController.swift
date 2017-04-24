@@ -51,8 +51,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "haikei.png")!)
     }
     
     
