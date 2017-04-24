@@ -46,11 +46,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBOutlet weak var label7: UILabel!
     
+    @IBOutlet weak var mygazou: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -182,8 +182,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                     let manager: PHImageManager = PHImageManager()
                     manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
                         
+                        
                         // 保存されているデータをデバッグエリアに表示
-                        print(hizuke)
+                        print("日付\(hizuke)")
                         
                         let df = DateFormatter()
                         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -216,6 +217,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                         self.seven.layer.cornerRadius = 30
                         
                         self.seven.layer.masksToBounds = true
+                        
+                        self.mygazou.layer.cornerRadius = 30
+                        
+                        self.mygazou.layer.masksToBounds = true
                         
                         // 本日の写真を表示
                         if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){

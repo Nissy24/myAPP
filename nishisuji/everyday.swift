@@ -91,7 +91,12 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 
                 syousai?.text = hitokoto
                 
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy/MM/dd"
+                let dateString: String = dateFormatter.string(from: hizuke!)
                 
+                mydatee?.text = dateString
+
                 
                 // 日付を判断してそれにあった画像を表示
                 if hizuke != nil && today != nil {

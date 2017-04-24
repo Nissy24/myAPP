@@ -170,7 +170,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         newRecord.setValue(mydate.text, forKey: "title") // 値を代入
         newRecord.setValue(Date(), forKey: "saveDate")//値を代入
         newRecord.setValue(Date(), forKey: "checkindate")
-        newRecord.setValue(mymemo.text, forKey: "memo")
+        newRecord.setValue(mydetail.text, forKey: "memo")
         newRecord.setValue(huku, forKey: "fashion")
                 
         do {
@@ -182,6 +182,15 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         }catch{
         }
 
+        // 部品のアラートを作る
+        let alertController = UIAlertController(title:"保存完了", message: "",preferredStyle: .alert)
+        
+        // OKボタンを追加
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // アラートを表示する
+        present(alertController, animated: true, completion: nil)
     }
     
     // 全部を読み込んで、おんなじ日付のやつを消して、最新だけを貰う

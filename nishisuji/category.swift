@@ -25,9 +25,22 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         
         // 文字を表示するセルの所得
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customCell
+        
         // 表示文字の設定
         cell.mylabel.text = mycategory[indexPath.row]
         
+//        // 文字を表示するセルの所得
+//        let myicon = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customCell
+//        
+//        myicon.myitem.image = mycategory
+//        
+//        switch mycategory.count {
+//        case 0:
+//            myitem.image = UIImage(named: )
+//        default:
+//            <#code#>
+//        }
+//        
         // 文字を設定したセルを返す
         return cell
         

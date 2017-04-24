@@ -188,6 +188,16 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
             read()
         }catch{
         }
+        
+        // 部品のアラートを作る
+        let alertController = UIAlertController(title:"保存完了", message: "",preferredStyle: .alert)
+        
+        // OKボタンを追加
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // アラートを表示する
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func mycategoryitem(_ sender: UITapGestureRecognizer) {
