@@ -105,6 +105,7 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                     let dateString: String = dateFormatter.string(from: hizuke!)
                     
                     mydatee?.text = dateString
+                    
                 }
             }
         }

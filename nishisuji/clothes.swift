@@ -92,48 +92,44 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                 today = result.value(forKey: "collection") as? String
                 hitokoto = result.value(forKey: "memo") as? String
                 mumu = result.value(forKey: "checkindate") as? Date
-               
-                
-                // hitokotoをmymemoに代入
-                mymemo?.text = hitokoto
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy/MM/dd"
-                let dateString: String = dateFormatter.string(from: mumu!)
-                
-                myLabel?.text = dateString
-                
-                
                 
                 // 日付を判断してそれにあった画像を表示
                 if hizuke != nil && today != nil {
-                    
-                    var options:PHImageRequestOptions = PHImageRequestOptions()
-                    options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
-                    let url = URL(string: today as String!)
-                    let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-                    let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-                    let manager: PHImageManager = PHImageManager()
-                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
                         let df = DateFormatter()
                         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
                         
                         // 本日の写真を表示
                         if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
-                            self.myhuku.image = image
+                            displayImage(displayurl: today!, dayNum: -1)
+                            // hitokotoをmymemoに代入
+                            mymemo?.text = hitokoto
                             
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy/MM/dd"
+                            let dateString: String = dateFormatter.string(from: mumu!)
                             
+                            myLabel?.text = dateString
+
+
                         }
                     }
                 }
-                
-            }
-        }catch{
-            
         }
         
     }
-
+    
+    // 表示したい画像のURLと日を表す数字を渡して、画像表示
+    func displayImage(displayurl:String,dayNum:Int){
+        let url = URL(string: displayurl as String!)
+        var options:PHImageRequestOptions = PHImageRequestOptions()
+        options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+        let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+        let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+        let manager: PHImageManager = PHImageManager()
+        manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
+                self.myhuku.image = image
+        }
+    }
 
     
     override func didReceiveMemoryWarning() {
