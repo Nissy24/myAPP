@@ -246,7 +246,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             }catch{
             }
             
-}
+    }
 
         
         

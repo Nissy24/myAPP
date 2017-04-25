@@ -100,6 +100,7 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                     displayImage(displayurl: today!, dayNum: -1)
                     
                     syousai?.text = hitokoto
+                    
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy/MM/dd"
                     let dateString: String = dateFormatter.string(from: hizuke!)

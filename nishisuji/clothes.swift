@@ -100,13 +100,13 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                         
                         // 本日の写真を表示
                         if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
-                            displayImage(displayurl: today!, dayNum: -1)
+                            displayImage(displayurl: today!, dayNum: self.selectedIndex)
                             // hitokotoをmymemoに代入
                             mymemo?.text = hitokoto
                             
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateFormat = "yyyy/MM/dd"
-                            let dateString: String = dateFormatter.string(from: mumu!)
+                            let dateString: String = dateFormatter.string(from: hizuke!)
                             
                             myLabel?.text = dateString
 
@@ -127,7 +127,10 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
         let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
         let manager: PHImageManager = PHImageManager()
         manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
+            
+            if dayNum == self.selectedIndex{
                 self.myhuku.image = image
+            }
         }
     }
 
