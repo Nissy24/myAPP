@@ -29,18 +29,16 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         // 表示文字の設定
         cell.mylabel.text = mycategory[indexPath.row]
         
-//        // 文字を表示するセルの所得
-//        let myicon = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customCell
-//        
-//        myicon.myitem.image = mycategory
-//        
-//        switch mycategory.count {
-//        case 0:
-//            myitem.image = UIImage(named: )
-//        default:
-//            <#code#>
-//        }
-//        
+        // 文字を表示するセルの所得
+
+        
+        switch indexPath.row {
+        case 0:
+            cell.myitem.image = UIImage(named: "03.png")
+        default: break
+            
+        }
+        
         // 文字を設定したセルを返す
         return cell
         

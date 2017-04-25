@@ -24,7 +24,7 @@ class customCell: UITableViewCell {
         
         // 枠線の色と角丸
         self.myitem.layer.borderColor = UIColor.blue.cgColor
-        self.myitem.layer.borderWidth = 10
+        self.myitem.layer.borderWidth = 1
         
         self.myitem.layer.cornerRadius = 50
         
