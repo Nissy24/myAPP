@@ -148,6 +148,42 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         let sevenDateEndTime = dfend.string(from: sevenDate as Date)
         
         print(sevenDateEndTime)
+        
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        // imageを角丸にする
+        self.one.layer.cornerRadius = 30
+        
+        self.one.layer.masksToBounds = true
+        
+        self.two.layer.cornerRadius = 30
+        
+        self.two.layer.masksToBounds = true
+        
+        self.three.layer.cornerRadius = 30
+        
+        self.three.layer.masksToBounds = true
+        
+        self.four.layer.cornerRadius = 30
+        
+        self.four.layer.masksToBounds = true
+        
+        self.five.layer.cornerRadius = 30
+        
+        self.five.layer.masksToBounds = true
+        
+        self.six.layer.cornerRadius = 30
+        
+        self.six.layer.masksToBounds = true
+        
+        self.seven.layer.cornerRadius = 30
+        
+        self.seven.layer.masksToBounds = true
+        
+        self.mygazou.layer.cornerRadius = 30
+        
+        self.mygazou.layer.masksToBounds = true
 
         // AppDelegateを使う用意をしておく
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -174,93 +210,79 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 
                 if hizuke != nil && today != nil {
                     
-                    let url = URL(string: today as String!)
-                    var options:PHImageRequestOptions = PHImageRequestOptions()
-                    options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
-                    let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-                    let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-                    let manager: PHImageManager = PHImageManager()
-                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
-                        
-                        
-                        // 保存されているデータをデバッグエリアに表示
-                        print("日付\(hizuke)")
-                        
-                        let df = DateFormatter()
-                        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                        
-                        // imageを角丸にする
-                        self.one.layer.cornerRadius = 30
-                        
-                        self.one.layer.masksToBounds = true
-                        
-                        self.two.layer.cornerRadius = 30
-                        
-                        self.two.layer.masksToBounds = true
-                        
-                        self.three.layer.cornerRadius = 30
-                        
-                        self.three.layer.masksToBounds = true
-                        
-                        self.four.layer.cornerRadius = 30
-                        
-                        self.four.layer.masksToBounds = true
-                        
-                        self.five.layer.cornerRadius = 30
-                        
-                        self.five.layer.masksToBounds = true
-                        
-                        self.six.layer.cornerRadius = 30
-                        
-                        self.six.layer.masksToBounds = true
-                        
-                        self.seven.layer.cornerRadius = 30
-                        
-                        self.seven.layer.masksToBounds = true
-                        
-                        self.mygazou.layer.cornerRadius = 30
-                        
-                        self.mygazou.layer.masksToBounds = true
-                        
-                        // 本日の写真を表示
-                        if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
-                            self.one.image = image
-                        }
-                        
-                        // １日前の写真を表示
-                        if (df.date(from: secondDateStartTime)! < hizuke! && df.date(from: secondDateEndTime)! > hizuke!){
-                            self.two.image = image
-                        }
-                        
-                        // 二日前の写真を表示
-                        if (df.date(from: thirdDateStartTime)! < hizuke! && df.date(from: thirdDateEndTime)! > hizuke!){
-                            self.three.image = image
-                        }
-                        // 三日前の写真を表示
-                        if (df.date(from: fourDateStartTime)! < hizuke! && df.date(from: fourDateEndTime)! > hizuke!){
-                            self.four.image = image
-                        }
-                        // 四日前の写真を表示
-                        if (df.date(from: fiveDateStartTime)! < hizuke! && df.date(from: fiveDateEndTime)! > hizuke!){
-                            self.five.image = image
-                        }
-                        // 五日前の写真を表示
-                        if (df.date(from: sixDateStartTime)! < hizuke! && df.date(from: sixDateEndTime)! > hizuke!){
-                            self.six.image = image
-                        }
-                        // 六日前の写真を表示
-                        if (df.date(from: sevenDateStartTime)! < hizuke! && df.date(from: sevenDateEndTime)! > hizuke!){
-                            self.seven.image = image
-                        }
-
-                        
+                    // 本日の写真を表示
+                    if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
+                        displayImage(displayurl: today!, dayNum: 1)
                     }
+                    // １日前の写真を表示
+                    if (df.date(from: secondDateStartTime)! < hizuke! && df.date(from: secondDateEndTime)! > hizuke!){
+                        displayImage(displayurl: today!, dayNum: 2)
+                    }
+                    
+                    // 二日前の写真を表示
+                    if (df.date(from: thirdDateStartTime)! < hizuke! && df.date(from: thirdDateEndTime)! > hizuke!){
+                        displayImage(displayurl: today!, dayNum: 3)
+                    }
+                    // 三日前の写真を表示
+                    if (df.date(from: fourDateStartTime)! < hizuke! && df.date(from: fourDateEndTime)! > hizuke!){
+                        displayImage(displayurl: today!, dayNum: 4)
+                    }
+                    // 四日前の写真を表示
+                    if (df.date(from: fiveDateStartTime)! < hizuke! && df.date(from: fiveDateEndTime)! > hizuke!){
+                        displayImage(displayurl: today!, dayNum: 5)
+                    }
+                    // 五日前の写真を表示
+                    if (df.date(from: sixDateStartTime)! < hizuke! && df.date(from: sixDateEndTime)! > hizuke!){
+                        displayImage(displayurl: today!, dayNum: 6)
+                    }
+                    // 六日前の写真を表示
+                    if (df.date(from: sevenDateStartTime)! < hizuke! && df.date(from: sevenDateEndTime)! > hizuke!){
+                        displayImage(displayurl: today!, dayNum: 7)
+                    }
+                    
+                    
                 }
-           }
-        }catch{
-        }
-        }
-    
+            }
+            }catch{
+            }
+            
+}
+
+        
+        
+                
+    // 表示したい画像のURLと日を表す数字を渡して、画像表示
+    func displayImage(displayurl:String,dayNum:Int){
+        let url = URL(string: displayurl as String!)
+        var options:PHImageRequestOptions = PHImageRequestOptions()
+        options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+        let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+        let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+        let manager: PHImageManager = PHImageManager()
+        manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
+            if dayNum == 1 {
+                self.one.image = image
+            }
+            if dayNum == 2 {
+                self.two.image = image
+            }
+            if dayNum == 3 {
+                self.three.image = image
+            }
+            if dayNum == 4 {
+                self.four.image = image
+            }
+            if dayNum == 5 {
+                self.five.image = image
+            }
+            if dayNum == 6 {
+                self.six.image = image
+            }
+            if dayNum == 7 {
+                self.seven.image = image
+            }
+    }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

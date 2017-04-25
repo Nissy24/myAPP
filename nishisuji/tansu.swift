@@ -116,11 +116,13 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         // 画像の表示
         if imageview != nil {
             
+            var options:PHImageRequestOptions = PHImageRequestOptions()
+            options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
             let url = URL(string: imageview as String!)
             let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
             let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
             let manager: PHImageManager = PHImageManager()
-            manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+            manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
                 cell.myitem?.image = image
                 
             }

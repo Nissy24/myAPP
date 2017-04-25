@@ -108,11 +108,13 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                 // 日付を判断してそれにあった画像を表示
                 if hizuke != nil && today != nil {
                     
+                    var options:PHImageRequestOptions = PHImageRequestOptions()
+                    options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
                     let url = URL(string: today as String!)
                     let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
                     let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
                     let manager: PHImageManager = PHImageManager()
-                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+                    manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
                         let df = DateFormatter()
                         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
                         
