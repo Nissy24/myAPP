@@ -35,6 +35,38 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         switch indexPath.row {
         case 0:
             cell.myitem.image = UIImage(named: "03.png")
+        case 1:
+            cell.myitem.image = UIImage(named: "b.jpeg")
+        case 2:
+            cell.myitem.image = UIImage(named: "c.jpeg")
+        case 3:
+            cell.myitem.image = UIImage(named: "d.png")
+        case 4:
+            cell.myitem.image = UIImage(named: "e.jpeg")
+        case 5:
+            cell.myitem.image = UIImage(named: "f.jpeg")
+        case 6:
+            cell.myitem.image = UIImage(named: "g.jpeg")
+        case 7:
+            cell.myitem.image = UIImage(named: "h.jpeg")
+        case 8:
+            cell.myitem.image = UIImage(named: "i.jpeg")
+        case 9:
+            cell.myitem.image = UIImage(named: "j.jpeg")
+        case 10:
+            cell.myitem.image = UIImage(named: "k.jpeg")
+        case 11:
+            cell.myitem.image = UIImage(named: "qq.jpeg")
+        case 12:
+            cell.myitem.image = UIImage(named: "m.png")
+        case 13:
+            cell.myitem.image = UIImage(named: "n.jpeg")
+        case 14:
+            cell.myitem.image = UIImage(named: "o.jpeg")
+        case 15:
+            cell.myitem.image = UIImage(named: "p.jpeg")
+        case 16:
+            cell.myitem.image = UIImage(named: "ww.png")
         default: break
             
         }

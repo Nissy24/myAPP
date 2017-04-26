@@ -23,12 +23,9 @@ class customCell: UITableViewCell {
         // Initialization code
         
         // 枠線の色と角丸
-        self.myitem.layer.borderColor = UIColor.blue.cgColor
-        self.myitem.layer.borderWidth = 1
-        
-        self.myitem.layer.cornerRadius = 50
-        
-        self.myitem.layer.masksToBounds = true
+//        self.myitem.layer.cornerRadius = 40
+//        
+//        self.myitem.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -157,12 +157,13 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         
         if (segue.identifier! == "hyouzi") {
             let hukuitem = segue.destination as! clothes
-            
-//私が書きました
-            hukuitem.scmemo = selectedIndex
-      
-    }
 
+            // 配列から画像と日付の情報を取得
+            let dic = myimage[(sender as! IndexPath).row] as! NSDictionary
+            
+            //私が書きました
+            hukuitem.scmemo = ((dic["saveDate"] as? Date))!
+                }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

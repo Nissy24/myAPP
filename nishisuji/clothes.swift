@@ -26,7 +26,7 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
     
     var selectimageIndex = NSDate()
     
-    var scmemo:Int = -1
+    var scmemo:Date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,8 +99,8 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
                         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
                         
                         // 本日の写真を表示
-                        if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
-                            displayImage(displayurl: today!, dayNum: self.selectedIndex)
+                        if (hizuke == scmemo){
+                            displayImage(displayurl: today!)
                             // hitokotoをmymemoに代入
                             mymemo?.text = hitokoto
                             
@@ -119,7 +119,7 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
     }
     
     // 表示したい画像のURLと日を表す数字を渡して、画像表示
-    func displayImage(displayurl:String,dayNum:Int){
+    func displayImage(displayurl:String){
         let url = URL(string: displayurl as String!)
         var options:PHImageRequestOptions = PHImageRequestOptions()
         options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
@@ -127,10 +127,7 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
         let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
         let manager: PHImageManager = PHImageManager()
         manager.requestImage(for: asset,targetSize: CGSize(width: 500, height: 500),contentMode: .aspectFill,options: options) { (image, info) -> Void in
-            
-            if dayNum == self.selectedIndex{
                 self.myhuku.image = image
-            }
         }
     }
 
