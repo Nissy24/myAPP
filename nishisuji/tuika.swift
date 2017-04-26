@@ -198,6 +198,7 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
         
         // アラートを表示する
         present(alertController, animated: true, completion: nil)
+        
     }
     
     @IBAction func mycategoryitem(_ sender: UITapGestureRecognizer) {

@@ -46,7 +46,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBOutlet weak var label7: UILabel!
     
-    @IBOutlet weak var mygazou: UIImageView!
+// @IBOutlet weak var mygazou: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,9 +181,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         self.seven.layer.masksToBounds = true
         
-        self.mygazou.layer.cornerRadius = 30
-        
-        self.mygazou.layer.masksToBounds = true
+//        self.mygazou.layer.cornerRadius = 30
+//        
+//        self.mygazou.layer.masksToBounds = true
 
         // AppDelegateを使う用意をしておく
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate

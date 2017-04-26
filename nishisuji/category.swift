@@ -14,6 +14,7 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
     
     var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子","その他"]
     
+    
     var selectedIndex = -1
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,6 +26,7 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         
         // 文字を表示するセルの所得
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customCell
+        
         
         // 表示文字の設定
         cell.mylabel.text = mycategory[indexPath.row]

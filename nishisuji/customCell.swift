@@ -14,9 +14,7 @@ class customCell: UITableViewCell {
     @IBOutlet weak var mylabel: UILabel!
     
     @IBOutlet weak var myitem: UIImageView!
-    
 
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
