@@ -38,35 +38,35 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         case 0:
             cell.myitem.image = UIImage(named: "03.png")
         case 1:
-            cell.myitem.image = UIImage(named: "b.jpeg")
+            cell.myitem.image = UIImage(named: "b.png")
         case 2:
-            cell.myitem.image = UIImage(named: "c.jpeg")
+            cell.myitem.image = UIImage(named: "c.png")
         case 3:
             cell.myitem.image = UIImage(named: "d.png")
         case 4:
-            cell.myitem.image = UIImage(named: "e.jpeg")
+            cell.myitem.image = UIImage(named: "e.png")
         case 5:
-            cell.myitem.image = UIImage(named: "f.jpeg")
+            cell.myitem.image = UIImage(named: "f.png")
         case 6:
-            cell.myitem.image = UIImage(named: "g.jpeg")
+            cell.myitem.image = UIImage(named: "g.png")
         case 7:
-            cell.myitem.image = UIImage(named: "h.jpeg")
+            cell.myitem.image = UIImage(named: "h.png")
         case 8:
-            cell.myitem.image = UIImage(named: "i.jpeg")
+            cell.myitem.image = UIImage(named: "i.png")
         case 9:
-            cell.myitem.image = UIImage(named: "j.jpeg")
+            cell.myitem.image = UIImage(named: "j.png")
         case 10:
-            cell.myitem.image = UIImage(named: "k.jpeg")
+            cell.myitem.image = UIImage(named: "k.png")
         case 11:
-            cell.myitem.image = UIImage(named: "qq.jpeg")
+            cell.myitem.image = UIImage(named: "qq.png")
         case 12:
             cell.myitem.image = UIImage(named: "m.png")
         case 13:
-            cell.myitem.image = UIImage(named: "n.jpeg")
+            cell.myitem.image = UIImage(named: "n.png")
         case 14:
-            cell.myitem.image = UIImage(named: "o.jpeg")
+            cell.myitem.image = UIImage(named: "o.png")
         case 15:
-            cell.myitem.image = UIImage(named: "p.jpeg")
+            cell.myitem.image = UIImage(named: "p.png")
         case 16:
             cell.myitem.image = UIImage(named: "ww.png")
         default: break
