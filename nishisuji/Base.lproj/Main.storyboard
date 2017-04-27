@@ -196,14 +196,14 @@
                                     <outletCollection property="gestureRecognizers" destination="NEf-ky-YIk" appends="YES" id="wN3-3h-R1d"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昨日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdm-dF-zui">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昨日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdm-dF-zui">
                                 <rect key="frame" x="227" y="206" width="35" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="二日前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-be-z8a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="二日前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-be-z8a">
                                 <rect key="frame" x="27" y="342" width="52" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -213,28 +213,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三日前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1y-fH-QWx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三日前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1y-fH-QWx">
                                 <rect key="frame" x="134" y="342" width="52" height="21"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="四日前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-hf-bah">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="四日前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-hf-bah">
                                 <rect key="frame" x="241" y="342" width="52" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五日前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aac-lr-Bet">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五日前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aac-lr-Bet">
                                 <rect key="frame" x="27" y="490" width="52" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfn-Zt-l9S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfn-Zt-l9S">
                                 <rect key="frame" x="59" y="206" width="35" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -242,7 +242,7 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="六日前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rb-xX-dyl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="六日前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rb-xX-dyl">
                                 <rect key="frame" x="134" y="490" width="52" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -306,29 +306,29 @@
                             <constraint firstItem="aKx-be-z8a" firstAttribute="baseline" secondItem="f1y-fH-QWx" secondAttribute="baseline" id="2VV-or-dUA"/>
                             <constraint firstItem="sbN-BR-ZcR" firstAttribute="top" secondItem="xAU-E0-Lsq" secondAttribute="top" id="2Zs-Lm-9JJ"/>
                             <constraint firstItem="2OI-Ps-u9m" firstAttribute="top" secondItem="sbN-BR-ZcR" secondAttribute="bottom" constant="23" id="34v-qH-2hh"/>
-                            <constraint firstItem="xAU-E0-Lsq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5pC-SB-4RM"/>
+                            <constraint firstItem="aac-lr-Bet" firstAttribute="centerX" secondItem="aKx-be-z8a" secondAttribute="centerX" id="3JZ-X5-gqA"/>
                             <constraint firstItem="Vfn-Zt-l9S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="5r7-u0-gV9"/>
                             <constraint firstItem="ugg-L9-9Zf" firstAttribute="trailing" secondItem="hKp-5b-rSe" secondAttribute="trailing" id="6Ct-1w-NhF"/>
                             <constraint firstItem="sbN-BR-ZcR" firstAttribute="top" secondItem="hKp-5b-rSe" secondAttribute="bottom" constant="6" id="7bZ-zD-Jxh"/>
                             <constraint firstItem="8ff-Ld-kGj" firstAttribute="centerX" secondItem="hoA-hf-bah" secondAttribute="centerX" id="83s-eO-LbF"/>
                             <constraint firstItem="ugg-L9-9Zf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9QA-mk-D0t"/>
                             <constraint firstItem="2OI-Ps-u9m" firstAttribute="leading" secondItem="oAF-jk-8ow" secondAttribute="leading" id="Bt1-DG-nHZ"/>
+                            <constraint firstItem="sbN-BR-ZcR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DVD-yk-o97"/>
                             <constraint firstItem="f1y-fH-QWx" firstAttribute="baseline" secondItem="hoA-hf-bah" secondAttribute="baseline" id="Enu-V8-nOh"/>
                             <constraint firstItem="f1y-fH-QWx" firstAttribute="leading" secondItem="aKx-be-z8a" secondAttribute="trailing" constant="55" id="IFo-4y-iMC"/>
-                            <constraint firstItem="sbN-BR-ZcR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ibi-DW-WKL"/>
                             <constraint firstItem="xAU-E0-Lsq" firstAttribute="leading" secondItem="sbN-BR-ZcR" secondAttribute="trailing" constant="48" id="PJf-ZL-gTz"/>
+                            <constraint firstItem="aKx-be-z8a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="QFK-wb-FyN"/>
                             <constraint firstItem="sU4-4f-lUF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="SnK-CY-xXV"/>
-                            <constraint firstItem="f1y-fH-QWx" firstAttribute="leading" secondItem="0Rb-xX-dyl" secondAttribute="leading" id="Tb8-il-eSm"/>
                             <constraint firstItem="ugg-L9-9Zf" firstAttribute="leading" secondItem="hKp-5b-rSe" secondAttribute="leading" id="UJ8-rA-eIk"/>
                             <constraint firstItem="aKx-be-z8a" firstAttribute="top" secondItem="sU4-4f-lUF" secondAttribute="bottom" constant="3" id="Wbx-lQ-XAH"/>
                             <constraint firstItem="sbN-BR-ZcR" firstAttribute="centerX" secondItem="Vfn-Zt-l9S" secondAttribute="centerX" id="WlU-Ry-BgP"/>
                             <constraint firstItem="hKp-5b-rSe" firstAttribute="centerX" secondItem="2OI-Ps-u9m" secondAttribute="centerX" id="Xa3-JS-w1S"/>
+                            <constraint firstItem="xAU-E0-Lsq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Yxm-UF-9Y8"/>
                             <constraint firstItem="sU4-4f-lUF" firstAttribute="top" secondItem="Vfn-Zt-l9S" secondAttribute="bottom" constant="2" id="ZRU-B1-Gqg"/>
                             <constraint firstItem="ugg-L9-9Zf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Zrz-I0-BVE"/>
                             <constraint firstItem="2OI-Ps-u9m" firstAttribute="centerX" secondItem="f1y-fH-QWx" secondAttribute="centerX" id="a1c-pd-IjJ"/>
                             <constraint firstItem="xAU-E0-Lsq" firstAttribute="centerX" secondItem="hdm-dF-zui" secondAttribute="centerX" id="aVK-bq-ZeY"/>
                             <constraint firstItem="2OI-Ps-u9m" firstAttribute="top" secondItem="8ff-Ld-kGj" secondAttribute="top" id="b7Z-AJ-4mh"/>
-                            <constraint firstItem="aKx-be-z8a" firstAttribute="leading" secondItem="aac-lr-Bet" secondAttribute="leading" id="f98-Hd-j7E"/>
                             <constraint firstItem="2OI-Ps-u9m" firstAttribute="leading" secondItem="sU4-4f-lUF" secondAttribute="trailing" constant="17" id="fRC-Cm-6fI"/>
                             <constraint firstItem="sU4-4f-lUF" firstAttribute="bottom" secondItem="2OI-Ps-u9m" secondAttribute="bottom" id="fx8-C3-78C"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aac-lr-Bet" secondAttribute="bottom" constant="8" symbolic="YES" id="g3W-qG-Stx"/>
@@ -352,6 +352,7 @@
                             <constraint firstItem="aac-lr-Bet" firstAttribute="baseline" secondItem="0Rb-xX-dyl" secondAttribute="baseline" id="vj9-iP-283"/>
                             <constraint firstItem="8ff-Ld-kGj" firstAttribute="leading" secondItem="2OI-Ps-u9m" secondAttribute="trailing" constant="17" id="w72-ZQ-UlR"/>
                             <constraint firstItem="4Z0-hi-4az" firstAttribute="top" secondItem="aKx-be-z8a" secondAttribute="bottom" constant="8" symbolic="YES" id="ygR-50-6KM"/>
+                            <constraint firstItem="0Rb-xX-dyl" firstAttribute="centerX" secondItem="f1y-fH-QWx" secondAttribute="centerX" id="zUu-Ax-YrM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="01.png" selectedImage="01.png" id="i2t-9Y-wIn">
