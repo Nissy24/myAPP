@@ -55,7 +55,6 @@
 		2BA6153A1EB05F36009CBDB1 /* l.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BA615391EB05F36009CBDB1 /* l.png */; };
 		2BA6153C1EB05F3F009CBDB1 /* m.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BA6153B1EB05F3F009CBDB1 /* m.png */; };
 		2BA615401EB0652C009CBDB1 /* ww.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BA6153F1EB0652C009CBDB1 /* ww.png */; };
-		2BABD6C81EAFAAB1007828E1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABD6C71EAFAAB1007828E1 /* 000.png */; };
 		2BABD6CF1EAFAAC0007828E1 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABD6C91EAFAAC0007828E1 /* 002.png */; };
 		2BABD6D01EAFAAC0007828E1 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABD6CA1EAFAAC0007828E1 /* 003.png */; };
 		2BABD6D11EAFAAC0007828E1 /* 004.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABD6CB1EAFAAC0007828E1 /* 004.png */; };
@@ -139,7 +138,6 @@
 		2BA615391EB05F36009CBDB1 /* l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = l.png; path = "../../写真/l.png"; sourceTree = "<group>"; };
 		2BA6153B1EB05F3F009CBDB1 /* m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m.png; path = "../../写真/m.png"; sourceTree = "<group>"; };
 		2BA6153F1EB0652C009CBDB1 /* ww.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ww.png; path = "../../写真/ww.png"; sourceTree = "<group>"; };
-		2BABD6C71EAFAAB1007828E1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 000.png; path = "../../写真/000.png"; sourceTree = "<group>"; };
 		2BABD6C91EAFAAC0007828E1 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 002.png; path = "../../写真/002.png"; sourceTree = "<group>"; };
 		2BABD6CA1EAFAAC0007828E1 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 003.png; path = "../../写真/003.png"; sourceTree = "<group>"; };
 		2BABD6CB1EAFAAC0007828E1 /* 004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 004.png; path = "../../写真/004.png"; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				2B625E6D1EB0E9B50059EB38 /* 15.png */,
 				2B625E6E1EB0E9B50059EB38 /* 16.png */,
 				2B625E6F1EB0E9B50059EB38 /* 17.png */,
-				2BABD6C71EAFAAB1007828E1 /* 000.png */,
 				2B640DC31EABDD4200039039 /* 01.png */,
 				2BABD6C91EAFAAC0007828E1 /* 002.png */,
 				2B640DC51EABDD4B00039039 /* 03.png */,
@@ -433,7 +430,6 @@
 				2B45A1AE1EB1AFF400050EB9 /* n.png in Resources */,
 				2B55506D1E88F430004EEEEF /* Assets.xcassets in Resources */,
 				2B5550941E8919C0004EEEEF /* yesterday.jpg in Resources */,
-				2BABD6C81EAFAAB1007828E1 /* 000.png in Resources */,
 				2B12A36B1E96153100D901A8 /* Info.plist in Resources */,
 				2B55506B1E88F430004EEEEF /* Main.storyboard in Resources */,
 			);
