@@ -85,6 +85,9 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 hitokoto = result.value(forKey: "memo") as? String
                 dayday = result.value(forKey: "checkindate") as? Date
                 
+                self.syousai.layer.borderColor = UIColor.black.cgColor
+                self.syousai.layer.borderWidth = 1
+                
                 self.syousai.layer.cornerRadius = 20
                 
                 self.syousai.layer.masksToBounds = true
