@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P4f-fE-cbo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P4f-fE-cbo">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,9 +24,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="82N-kc-aUa">
-                                <rect key="frame" x="40" y="78" width="240" height="286"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ecL-yJ-O9V">
                                 <rect key="frame" x="40" y="420" width="240" height="63"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -89,6 +86,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="11.png" translatesAutoresizingMaskIntoConstraints="NO" id="82N-kc-aUa">
+                                <rect key="frame" x="71" y="78" width="178" height="286"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -106,14 +106,14 @@
                             <constraint firstItem="ecL-yJ-O9V" firstAttribute="top" secondItem="kmh-CV-bdx" secondAttribute="bottom" constant="27" id="YQz-vY-jGH"/>
                             <constraint firstItem="x4O-wD-hoG" firstAttribute="trailing" secondItem="NYS-DH-gPa" secondAttribute="trailing" id="Zjq-Il-SDp"/>
                             <constraint firstItem="x4O-wD-hoG" firstAttribute="leading" secondItem="NYS-DH-gPa" secondAttribute="leading" id="a4Y-lh-Jvf"/>
-                            <constraint firstItem="82N-kc-aUa" firstAttribute="leading" secondItem="dZA-fs-3mB" secondAttribute="leadingMargin" constant="24" id="bRU-7r-CWF"/>
+                            <constraint firstItem="82N-kc-aUa" firstAttribute="leading" secondItem="dZA-fs-3mB" secondAttribute="leadingMargin" constant="55" id="bRU-7r-CWF"/>
                             <constraint firstItem="bCv-1B-TQz" firstAttribute="trailing" secondItem="x4O-wD-hoG" secondAttribute="trailing" id="dze-IR-bcn"/>
                             <constraint firstItem="ecL-yJ-O9V" firstAttribute="centerX" secondItem="NYS-DH-gPa" secondAttribute="centerX" id="hFG-kv-7hF"/>
-                            <constraint firstItem="82N-kc-aUa" firstAttribute="trailing" secondItem="kmh-CV-bdx" secondAttribute="trailing" id="hJ2-Ue-BfE"/>
+                            <constraint firstItem="82N-kc-aUa" firstAttribute="trailing" secondItem="kmh-CV-bdx" secondAttribute="trailing" constant="-31" id="hJ2-Ue-BfE"/>
                             <constraint firstItem="kmh-CV-bdx" firstAttribute="top" secondItem="82N-kc-aUa" secondAttribute="bottom" constant="8" symbolic="YES" id="nAE-dP-W0J"/>
                             <constraint firstItem="NYS-DH-gPa" firstAttribute="top" secondItem="ffh-57-7tZ" secondAttribute="bottom" constant="60" id="po6-Hc-okI"/>
                             <constraint firstItem="NYS-DH-gPa" firstAttribute="top" secondItem="ecL-yJ-O9V" secondAttribute="bottom" constant="9" id="qHy-jt-uPS"/>
-                            <constraint firstItem="82N-kc-aUa" firstAttribute="leading" secondItem="kmh-CV-bdx" secondAttribute="leading" id="qlm-wC-Tje"/>
+                            <constraint firstItem="82N-kc-aUa" firstAttribute="leading" secondItem="kmh-CV-bdx" secondAttribute="leading" constant="31" id="qlm-wC-Tje"/>
                             <constraint firstItem="NYS-DH-gPa" firstAttribute="bottom" secondItem="Y41-Pu-iKD" secondAttribute="top" id="z3e-YR-SHT"/>
                         </constraints>
                     </view>
@@ -142,7 +142,6 @@
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.png" translatesAutoresizingMaskIntoConstraints="NO" id="xAU-E0-Lsq">
                                 <rect key="frame" x="184" y="62" width="120" height="144"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xAU-E0-Lsq" secondAttribute="height" multiplier="5:6" id="BqP-ip-ovf"/>
@@ -153,7 +152,6 @@
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="13.png" translatesAutoresizingMaskIntoConstraints="NO" id="sU4-4f-lUF">
                                 <rect key="frame" x="8" y="229" width="90" height="110"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="LQv-1v-k8d"/>
@@ -165,7 +163,6 @@
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="15.png" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-Ld-kGj">
                                 <rect key="frame" x="222" y="229" width="90" height="110"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="Woe-cT-L8I"/>
@@ -177,7 +174,6 @@
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="16.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Z0-hi-4az">
                                 <rect key="frame" x="8" y="371" width="90" height="110"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4Z0-hi-4az" secondAttribute="height" multiplier="9:11" id="AsC-md-uHD"/>
@@ -189,7 +185,6 @@
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="17.png" translatesAutoresizingMaskIntoConstraints="NO" id="oAF-jk-8ow">
                                 <rect key="frame" x="115" y="371" width="90" height="110"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oAF-jk-8ow" secondAttribute="height" multiplier="9:11" id="bsI-ta-leC"/>
@@ -272,7 +267,6 @@
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11.png" translatesAutoresizingMaskIntoConstraints="NO" id="sbN-BR-ZcR">
                                 <rect key="frame" x="16" y="62" width="120" height="144"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sbN-BR-ZcR" secondAttribute="height" multiplier="5:6" id="lqi-C6-HXq"/>
@@ -284,7 +278,6 @@
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="14.png" translatesAutoresizingMaskIntoConstraints="NO" id="2OI-Ps-u9m">
                                 <rect key="frame" x="115" y="229" width="90" height="110"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2OI-Ps-u9m" secondAttribute="height" multiplier="9:11" id="7Nr-Sd-UN4"/>

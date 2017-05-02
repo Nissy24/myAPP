@@ -50,7 +50,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     
@@ -180,6 +179,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.seven.layer.cornerRadius = 30
         
         self.seven.layer.masksToBounds = true
+        
+        
         
 //        self.mygazou.layer.cornerRadius = 30
 //        
