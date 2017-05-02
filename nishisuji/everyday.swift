@@ -36,7 +36,7 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         self.dismiss(animated: true)
     }
     
-    
+    // コメント
     
     override func viewWillAppear(_ animated: Bool) {
         
