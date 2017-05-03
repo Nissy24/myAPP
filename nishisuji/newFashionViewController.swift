@@ -272,6 +272,7 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {    //追記
     //写真ライブラリ(カメラロール)表示用のViewControllerを宣言
     let controller = UIImagePickerController()
+        
     
     controller.delegate = self
     //新しく宣言したViewControllerでカメラとカメラロールのどちらを表示するかを指定
@@ -280,6 +281,10 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
     controller.allowsEditing = true
     //新たに追加したカメラロール表示ViewControllerをpresentViewControllerにする
     self.present(controller, animated: true, completion: nil)
+        
+        // いじったところ（５/２）
+        controller.modalPresentationStyle = .popover //※追加
+        let popover = controller.popoverPresentationController
     
     }
     }

@@ -61,8 +61,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         //　配列初期化
         myimage = NSMutableArray()
-        
-        // dfに詳しい日付を入れる
+            // dfに詳しい日付を入れる
         let dfstart = DateFormatter()
         dfstart.dateFormat = "yyyy-MM-dd 00:00:00"
         

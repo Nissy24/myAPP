@@ -10,7 +10,7 @@ import UIKit
 
 class customImage: UICollectionViewCell {
     
-
+    
     
     @IBOutlet weak var myitem: UIImageView!
     
