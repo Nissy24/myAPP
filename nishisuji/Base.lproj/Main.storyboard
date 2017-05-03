@@ -626,7 +626,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ks-na-hJT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KJ3-eN-9L1" customClass="customCell" customModule="nishisuji" customModuleProvider="target">
@@ -686,7 +686,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1ks-na-hJT" secondAttribute="trailing" id="6Nd-Xw-xpv"/>
                             <constraint firstItem="1ks-na-hJT" firstAttribute="top" secondItem="5NS-Bb-ZyO" secondAttribute="top" id="Aaj-Ea-YLn"/>
-                            <constraint firstAttribute="bottom" secondItem="1ks-na-hJT" secondAttribute="bottom" id="Y6T-Vq-Xs0"/>
+                            <constraint firstAttribute="bottom" secondItem="1ks-na-hJT" secondAttribute="bottom" constant="109" id="Y6T-Vq-Xs0"/>
                             <constraint firstItem="1ks-na-hJT" firstAttribute="leading" secondItem="5NS-Bb-ZyO" secondAttribute="leading" id="aOj-nf-4dw"/>
                         </constraints>
                     </view>
@@ -957,7 +957,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XaH-ii-8OM">
-                                <rect key="frame" x="16" y="28" width="288" height="520"/>
+                                <rect key="frame" x="16" y="28" width="288" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x1L-YO-C5x">
                                     <size key="itemSize" width="86" height="112"/>
@@ -1001,7 +1001,7 @@
                         <constraints>
                             <constraint firstItem="XaH-ii-8OM" firstAttribute="leading" secondItem="eIJ-ka-Dhq" secondAttribute="leadingMargin" id="4M7-as-tbE"/>
                             <constraint firstItem="XaH-ii-8OM" firstAttribute="trailing" secondItem="eIJ-ka-Dhq" secondAttribute="trailingMargin" id="B1j-Ch-MJa"/>
-                            <constraint firstAttribute="bottom" secondItem="XaH-ii-8OM" secondAttribute="bottom" constant="20" symbolic="YES" id="v55-7o-1VS"/>
+                            <constraint firstAttribute="bottom" secondItem="XaH-ii-8OM" secondAttribute="bottom" constant="109" id="v55-7o-1VS"/>
                             <constraint firstItem="XaH-ii-8OM" firstAttribute="top" secondItem="eIJ-ka-Dhq" secondAttribute="topMargin" constant="28" id="yMO-jJ-dqu"/>
                         </constraints>
                     </view>
@@ -1017,7 +1017,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2914" y="695"/>
+            <point key="canvasLocation" x="2913.75" y="694.0140845070423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VOi-0E-n3q">

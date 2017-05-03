@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import Photos
 import MobileCoreServices
+import GoogleMobileAds
 
-class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,GADBannerViewDelegate {
     
     var mycategory = ["トップス","ジャケット/アウター","パンツ","オールインワン・サロンペット","スカート","ワンピース","スーツ/ネクタイ/かりゆしウェア","バッグ","シューズ","ファッション雑貨","時計","ヘアアクセサリー","アクセサリー","アンダーウェア","レッグウェア","帽子","その他"]
 
@@ -21,6 +22,13 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
 
     var selectimageIndex = NSDate()
     
+    // AdMod ID を入れてください
+    let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+    let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
+    
+    let AdModTest:Bool = true
+    let SimulatorTest:Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,8 +36,45 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         print(myimage)
         
         read()
+        
+        showAdBanner()
     }
     
+    // 広告を表示する
+    func showAdBanner(){
+        var admobView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height - 60)
+        
+        admobView.frame.size = CGSize(width:self.view.frame.width, height:admobView.frame.height)
+        admobView.adUnitID = AdMobID
+        admobView.delegate = self
+        admobView.rootViewController = self
+        
+        let admobRequest = GADRequest()
+        
+        
+        if(AdModTest){
+            // simulator テスト
+            if SimulatorTest {
+                admobRequest.testDevices = [kGADSimulatorID]
+                print("simulator")
+            }
+                // 実機テスト
+            else {
+                admobRequest.testDevices = [TEST_DEVICE_ID]
+                print("device")
+            }
+        }
+            // 本番
+            admobView.load(admobRequest)
+        
+        
+        
+        self.view.addSubview(admobView)
+        
+    }
+
     // collectionViewが選択された時に発動
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
@@ -188,14 +233,15 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
             // エンティティを操作するためのオブジェクトを作成
             let viewContext = appDelegate.persistentContainer.viewContext
             
-             let query: NSFetchRequest<Myitem> = Myitem.fetchRequest()
+             let request: NSFetchRequest<Myitem> = Myitem.fetchRequest()
             
-//            let picture = NSPredicate(format: "saveDate = %@" ,  as CVarArg)
+            let picture = NSPredicate(format: "saveDate = %@" , self.selectimageIndex as CVarArg)
             
-            //データを一括取得
-            let fetchResults = try! viewContext.fetch(query)
+            request.predicate = picture
             
             do{
+            //データを一括取得
+            let fetchResults = try! viewContext.fetch(request)
             
             // todayをString型にしてnilをいれる
             var today: String? = nil
@@ -208,6 +254,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
                 today = result.value(forKey: "collection") as? String
                 
             let record = result as! NSManagedObject
+                
             // 一行ずつ削除
             viewContext.delete(record)
                 

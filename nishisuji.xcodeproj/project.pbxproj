@@ -19,6 +19,17 @@
 		2B0A507E1EB8D74700F2758D /* up1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0A507D1EB8D74700F2758D /* up1.png */; };
 		2B0A50801EB8D7E800F2758D /* backback.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0A507F1EB8D7E800F2758D /* backback.png */; };
 		2B0A50821EB8DE6C00F2758D /* up3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0A50811EB8DE6C00F2758D /* up3.png */; };
+		2B0A50891EB9AD7F00F2758D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A50881EB9AD7F00F2758D /* AdSupport.framework */; };
+		2B0A508B1EB9AD9600F2758D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A508A1EB9AD9600F2758D /* AudioToolbox.framework */; };
+		2B0A508D1EB9ADA400F2758D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A508C1EB9ADA400F2758D /* AVFoundation.framework */; };
+		2B0A508F1EB9ADB200F2758D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A508E1EB9ADB200F2758D /* CoreGraphics.framework */; };
+		2B0A50911EB9ADC300F2758D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A50901EB9ADC300F2758D /* CoreTelephony.framework */; };
+		2B0A50931EB9ADD200F2758D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A50921EB9ADD200F2758D /* EventKit.framework */; };
+		2B0A50951EB9ADDA00F2758D /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A50941EB9ADDA00F2758D /* EventKitUI.framework */; };
+		2B0A50971EB9ADE600F2758D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A50961EB9ADE600F2758D /* MessageUI.framework */; };
+		2B0A50991EB9ADF500F2758D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A50981EB9ADF400F2758D /* StoreKit.framework */; };
+		2B0A509B1EB9AE0300F2758D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A509A1EB9AE0300F2758D /* SystemConfiguration.framework */; };
+		2B0A509F1EB9B5D900F2758D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0A509E1EB9B5D900F2758D /* GoogleMobileAds.framework */; };
 		2B12A36B1E96153100D901A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B12A36A1E96153100D901A8 /* Info.plist */; };
 		2B12C9E01E90D9FA00962F0B /* tansu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12C9DF1E90D9FA00962F0B /* tansu.swift */; };
 		2B12C9E21E90DDDF00962F0B /* clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12C9E11E90DDDF00962F0B /* clothes.swift */; };
@@ -113,6 +124,17 @@
 		2B0A507D1EB8D74700F2758D /* up1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up1.png; sourceTree = "<group>"; };
 		2B0A507F1EB8D7E800F2758D /* backback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backback.png; sourceTree = "<group>"; };
 		2B0A50811EB8DE6C00F2758D /* up3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up3.png; sourceTree = "<group>"; };
+		2B0A50881EB9AD7F00F2758D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		2B0A508A1EB9AD9600F2758D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2B0A508C1EB9ADA400F2758D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2B0A508E1EB9ADB200F2758D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2B0A50901EB9ADC300F2758D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2B0A50921EB9ADD200F2758D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		2B0A50941EB9ADDA00F2758D /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		2B0A50961EB9ADE600F2758D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2B0A50981EB9ADF400F2758D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2B0A509A1EB9AE0300F2758D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2B0A509E1EB9B5D900F2758D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		2B12A36A1E96153100D901A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B12C9DF1E90D9FA00962F0B /* tansu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tansu.swift; sourceTree = "<group>"; };
 		2B12C9E11E90DDDF00962F0B /* clothes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clothes.swift; sourceTree = "<group>"; };
@@ -187,6 +209,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B0A509B1EB9AE0300F2758D /* SystemConfiguration.framework in Frameworks */,
+				2B0A50991EB9ADF500F2758D /* StoreKit.framework in Frameworks */,
+				2B0A50971EB9ADE600F2758D /* MessageUI.framework in Frameworks */,
+				2B0A509F1EB9B5D900F2758D /* GoogleMobileAds.framework in Frameworks */,
+				2B0A50951EB9ADDA00F2758D /* EventKitUI.framework in Frameworks */,
+				2B0A50931EB9ADD200F2758D /* EventKit.framework in Frameworks */,
+				2B0A50911EB9ADC300F2758D /* CoreTelephony.framework in Frameworks */,
+				2B0A508F1EB9ADB200F2758D /* CoreGraphics.framework in Frameworks */,
+				2B0A508D1EB9ADA400F2758D /* AVFoundation.framework in Frameworks */,
+				2B0A508B1EB9AD9600F2758D /* AudioToolbox.framework in Frameworks */,
+				2B0A50891EB9AD7F00F2758D /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +240,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0A50871EB9AD7E00F2758D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B0A509A1EB9AE0300F2758D /* SystemConfiguration.framework */,
+				2B0A50981EB9ADF400F2758D /* StoreKit.framework */,
+				2B0A50961EB9ADE600F2758D /* MessageUI.framework */,
+				2B0A50941EB9ADDA00F2758D /* EventKitUI.framework */,
+				2B0A50921EB9ADD200F2758D /* EventKit.framework */,
+				2B0A50901EB9ADC300F2758D /* CoreTelephony.framework */,
+				2B0A508E1EB9ADB200F2758D /* CoreGraphics.framework */,
+				2B0A508C1EB9ADA400F2758D /* AVFoundation.framework */,
+				2B0A508A1EB9AD9600F2758D /* AudioToolbox.framework */,
+				2B0A50881EB9AD7F00F2758D /* AdSupport.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2B5550591E88F430004EEEEF = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +269,7 @@
 				2B5550791E88F430004EEEEF /* nishisujiTests */,
 				2B5550841E88F430004EEEEF /* nishisujiUITests */,
 				2B5550631E88F430004EEEEF /* Products */,
+				2B0A50871EB9AD7E00F2758D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +286,7 @@
 		2B5550641E88F430004EEEEF /* nishisuji */ = {
 			isa = PBXGroup;
 			children = (
+				2B0A509E1EB9B5D900F2758D /* GoogleMobileAds.framework */,
 				2B6C6EEA1E8A2773005E85BD /* ViewController.swift */,
 				2B5550651E88F430004EEEEF /* AppDelegate.swift */,
 				2B5550691E88F430004EEEEF /* Main.storyboard */,
@@ -688,6 +740,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5339BL2S95;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/nishisuji",
+				);
 				INFOPLIST_FILE = nishisuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishinishi;
@@ -701,6 +757,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5339BL2S95;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/nishisuji",
+				);
 				INFOPLIST_FILE = nishisuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nishisuji.nishinishi;

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
+class category: UIViewController,UITableViewDelegate,UITableViewDataSource,GADBannerViewDelegate  {
 
     @IBOutlet weak var mytableview: UITableView!
     
@@ -78,11 +79,54 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
         
     }
 
+    // AdMod ID を入れてください
+    let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+    let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
+    
+    let AdModTest:Bool = true
+    let SimulatorTest:Bool = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 広告を表示する関数を呼び出す
+        showAdBanner()
+    }
+    
+    // 広告を表示する
+    func showAdBanner(){
+        var admobView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height - 60)
+        
+        admobView.frame.size = CGSize(width:self.view.frame.width, height:admobView.frame.height)
+        admobView.adUnitID = AdMobID
+        admobView.delegate = self
+        admobView.rootViewController = self
+        
+        let admobRequest = GADRequest()
+        
+        
+        if(AdModTest){
+            // simulator テスト
+            if SimulatorTest {
+                admobRequest.testDevices = [kGADSimulatorID]
+                print("simulator")
+            }
+                // 実機テスト
+            else {
+                admobRequest.testDevices = [TEST_DEVICE_ID]
+                print("device")
+            }
+        }
+            // 本番
+            admobView.load(admobRequest)
+        
+        
+        
+        self.view.addSubview(admobView)
+    
     }
     
     // セルが選択したとき発動
@@ -129,9 +173,8 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource  {
             secondVC.selectedIndex = selectedIndex
         }
         
-        
-        
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
