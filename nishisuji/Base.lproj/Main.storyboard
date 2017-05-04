@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bE6-hs-cSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2913.75" y="-563.02816901408448"/>
+            <point key="canvasLocation" x="2953" y="-408"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -942,7 +942,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2058.75" y="1586.6197183098591"/>
+            <point key="canvasLocation" x="2059" y="1463"/>
         </scene>
         <!--My Items-->
         <scene sceneID="ycu-Uk-hsG">
@@ -959,6 +959,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XaH-ii-8OM">
                                 <rect key="frame" x="16" y="28" width="288" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x1L-YO-C5x">
                                     <size key="itemSize" width="86" height="112"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -987,17 +988,18 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="myitem" destination="zum-kM-uIk" id="8aj-ob-45V"/>
-                                            <outletCollection property="gestureRecognizers" destination="Lcs-0E-vhj" appends="YES" id="oob-OW-MAA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="vNR-h4-2Ey" id="bzd-nY-G3v"/>
                                     <outlet property="delegate" destination="vNR-h4-2Ey" id="5gG-La-T88"/>
+                                    <outletCollection property="gestureRecognizers" destination="Lcs-0E-vhj" appends="YES" id="8qQ-re-Xo3"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="XaH-ii-8OM" firstAttribute="leading" secondItem="eIJ-ka-Dhq" secondAttribute="leadingMargin" id="4M7-as-tbE"/>
                             <constraint firstItem="XaH-ii-8OM" firstAttribute="trailing" secondItem="eIJ-ka-Dhq" secondAttribute="trailingMargin" id="B1j-Ch-MJa"/>
@@ -1013,7 +1015,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pE-Nt-UxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Lcs-0E-vhj">
                     <connections>
-                        <action selector="mydelete:" destination="vNR-h4-2Ey" id="Tfz-g7-9Ua"/>
+                        <action selector="mydelete:" destination="vNR-h4-2Ey" id="eAJ-bK-kx7"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>

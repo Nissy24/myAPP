@@ -123,6 +123,7 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         let url = URL(string: displayurl as String!)
         var options:PHImageRequestOptions = PHImageRequestOptions()
         options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+        options.isSynchronous = true
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
         let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
         let manager: PHImageManager = PHImageManager()

@@ -29,6 +29,8 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     let AdModTest:Bool = true
     let SimulatorTest:Bool = true
     
+    @IBOutlet weak var mycollectionview: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -163,6 +165,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
             
             var options:PHImageRequestOptions = PHImageRequestOptions()
             options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+            options.isSynchronous = true
             let url = URL(string: imageview as String!)
             let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
             let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
@@ -213,6 +216,10 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     
     @IBAction func mydelete(_ sender: UILongPressGestureRecognizer) {
         
+        let point: CGPoint =  sender.location(in: self.mycollectionview)
+        let indexPath = self.mycollectionview.indexPathForItem(at: point)
+        
+        print(indexPath?.row)
         // ① UIAlertControllerクラスのインスタンスを生成
         // タイトル, メッセージ, Alertのスタイルを指定する
         // 第3引数のpreferredStyleでアラートの表示スタイルを指定する
@@ -226,6 +233,9 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
             // ボタンが押された時の処理を書く（クロージャ実装）
             (action: UIAlertAction!) -> Void in
             print("OK")
+            
+            
+            
             
             // AppDelegateを使う用意をしておく
             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate

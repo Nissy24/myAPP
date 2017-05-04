@@ -317,6 +317,10 @@ class newFashionViewController: UIViewController,UIImagePickerControllerDelegate
         
         if strURL != nil{
             
+            var options:PHImageRequestOptions = PHImageRequestOptions()
+            options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+            // 同期がちゃんとできる
+            options.isSynchronous = true
             let url = URL(string: strURL as String!)
             let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
             let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
