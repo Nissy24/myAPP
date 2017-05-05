@@ -23,13 +23,13 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     var selectimageIndex = NSDate()
     
     // AdMod ID を入れてください
-    let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+    let AdMobID = ""
     let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
     
     let AdModTest:Bool = true
     let SimulatorTest:Bool = true
     
-    @IBOutlet weak var mycollectionview: UICollectionView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     func showAdBanner(){
         var admobView = GADBannerView()
         admobView = GADBannerView(adSize:kGADAdSizeBanner)
-        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height - 60)
+        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height - 49)
         
         admobView.frame.size = CGSize(width:self.view.frame.width, height:admobView.frame.height)
         admobView.adUnitID = AdMobID
@@ -156,12 +156,12 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
         // 配列から画像と日付の情報を取得
         let dic = myimage[indexPath.row] as! NSDictionary
         
-        var imageview: String? = dic["collection"] as! String
-        var mydate: Date? = dic["saveDate"] as! Date
-        
         
         // 画像の表示
-        if imageview != nil {
+        if dic["collection"] as? String !=  nil {
+            
+            var imageview: String? = dic["collection"] as! String
+            var mydate: Date? = dic["saveDate"] as! Date
             
             var options:PHImageRequestOptions = PHImageRequestOptions()
             options.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
@@ -214,80 +214,77 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
                 }
     }
     
-    @IBAction func mydelete(_ sender: UILongPressGestureRecognizer) {
-        
-        let point: CGPoint =  sender.location(in: self.mycollectionview)
-        let indexPath = self.mycollectionview.indexPathForItem(at: point)
-        
-        print(indexPath?.row)
-        // ① UIAlertControllerクラスのインスタンスを生成
-        // タイトル, メッセージ, Alertのスタイルを指定する
-        // 第3引数のpreferredStyleでアラートの表示スタイルを指定する
-        let alert: UIAlertController = UIAlertController(title: "アイテム削除", message: "削除してもいいですか？", preferredStyle:  UIAlertControllerStyle.alert)
-        
-        // ② Actionの設定
-        // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
-        // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
-        // OKボタン
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
-            // ボタンが押された時の処理を書く（クロージャ実装）
-            (action: UIAlertAction!) -> Void in
-            print("OK")
-            
-            
-            
-            
-            // AppDelegateを使う用意をしておく
-            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-            // エンティティを操作するためのオブジェクトを作成
-            let viewContext = appDelegate.persistentContainer.viewContext
-            
-             let request: NSFetchRequest<Myitem> = Myitem.fetchRequest()
-            
-            let picture = NSPredicate(format: "saveDate = %@" , self.selectimageIndex as CVarArg)
-            
-            request.predicate = picture
-            
-            do{
-            //データを一括取得
-            let fetchResults = try! viewContext.fetch(request)
-            
-            // todayをString型にしてnilをいれる
-            var today: String? = nil
-            
-            // データの取得
-            for result:AnyObject in fetchResults{
-                let saveDate: Date? = result.value(forKey: "saveDate") as? Date
-                
-                //今日のデータだったら、消す！（最新だけ残す）
-                today = result.value(forKey: "collection") as? String
-                
-            let record = result as! NSManagedObject
-                
-            // 一行ずつ削除
-            viewContext.delete(record)
-                
-                
-                let view: UIImageView = UIImageView()
-                view.removeFromSuperview()
-            
-                try! viewContext.save()
-                }}})
-        // キャンセルボタン
-        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler:{
-            // ボタンが押された時の処理を書く（クロージャ実装）
-            (action: UIAlertAction!) -> Void in
-            print("Cancel")
-        })
-        
-        // ③ UIAlertControllerにActionを追加
-        alert.addAction(cancelAction)
-        alert.addAction(defaultAction)
-        
-        // ④ Alertを表示
-        present(alert, animated: true, completion: nil)
-    }
+//    @IBAction func mydelete(_ sender: UILongPressGestureRecognizer) {
+//        
+//        let point: CGPoint =  sender.location(in: self.mycollectionview)
+//        let indexPath = self.mycollectionview!.indexPathForItem(at: point)!
+//        
+//        print(indexPath.row)
+//        // ① UIAlertControllerクラスのインスタンスを生成
+//        // タイトル, メッセージ, Alertのスタイルを指定する
+//        // 第3引数のpreferredStyleでアラートの表示スタイルを指定する
+//        let alert: UIAlertController = UIAlertController(title: "アイテム削除", message: "削除してもいいですか？", preferredStyle:  UIAlertControllerStyle.alert)
+//        
+//        // ② Actionの設定
+//        // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
+//        // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
+//        // OKボタン
+//        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+//            // ボタンが押された時の処理を書く（クロージャ実装）
+//            (action: UIAlertAction!) -> Void in
+//            print("OK")
+//            
+//            // AppDelegateを使う用意をしておく
+//            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+//            
+//            // エンティティを操作するためのオブジェクトを作成
+//            let viewContext = appDelegate.persistentContainer.viewContext
+//            
+//             let request: NSFetchRequest<Myitem> = Myitem.fetchRequest()
+//            
+//            let picture = NSPredicate(format: "saveDate = %@" , self.selectimageIndex as CVarArg)
+//            
+//            request.predicate = picture
+//            
+//            do{
+//            //データを一括取得
+//            let fetchResults = try! viewContext.fetch(request)
+//            
+//            // todayをString型にしてnilをいれる
+//            var today: String? = nil
+//            
+//            // データの取得
+//            for result:AnyObject in fetchResults{
+//                let saveDate: Date? = result.value(forKey: "saveDate") as? Date
+//                
+//                //今日のデータだったら、消す！（最新だけ残す）
+//                today = result.value(forKey: "collection") as? String
+//                
+//            let record = result as! NSManagedObject
+//                
+//            // 一行ずつ削除
+//            viewContext.delete(record)
+//                
+//                
+//                let view: UIImageView = UIImageView()
+//                view.removeFromSuperview()
+//            
+//                try! viewContext.save()
+//                }}})
+//        // キャンセルボタン
+//        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler:{
+//            // ボタンが押された時の処理を書く（クロージャ実装）
+//            (action: UIAlertAction!) -> Void in
+//            print("Cancel")
+//        })
+//        
+//        // ③ UIAlertControllerにActionを追加
+//        alert.addAction(cancelAction)
+//        alert.addAction(defaultAction)
+//        
+//        // ④ Alertを表示
+//        present(alert, animated: true, completion: nil)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

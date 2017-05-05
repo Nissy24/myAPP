@@ -80,7 +80,7 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource,GADBa
     }
 
     // AdMod ID を入れてください
-    let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+    let AdMobID = ""
     let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
     
     let AdModTest:Bool = true
@@ -98,7 +98,7 @@ class category: UIViewController,UITableViewDelegate,UITableViewDataSource,GADBa
     func showAdBanner(){
         var admobView = GADBannerView()
         admobView = GADBannerView(adSize:kGADAdSizeBanner)
-        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height - 60)
+        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height - 49)
         
         admobView.frame.size = CGSize(width:self.view.frame.width, height:admobView.frame.height)
         admobView.adUnitID = AdMobID

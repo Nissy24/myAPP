@@ -777,7 +777,21 @@
                             <constraint firstItem="kKR-7W-EQ0" firstAttribute="leading" secondItem="r21-NK-R6A" secondAttribute="leadingMargin" constant="42" id="vHB-hg-Lok"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Clothes" id="kmv-Ji-dnR"/>
+                    <navigationItem key="navigationItem" title="Clothes" id="kmv-Ji-dnR">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="N09-Dw-EA4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t19-AU-NAm">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="delete"/>
+                                <connections>
+                                    <action selector="mydelete:" destination="SZA-7F-5Pk" eventType="touchUpInside" id="QUS-bP-pUn"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="mydelete:" destination="SZA-7F-5Pk" id="Omc-8g-3Dh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myLabel" destination="G5z-Q6-40o" id="jMk-rw-RBk"/>
                         <outlet property="myhuku" destination="kKR-7W-EQ0" id="nyI-j8-u4g"/>
@@ -994,7 +1008,6 @@
                                 <connections>
                                     <outlet property="dataSource" destination="vNR-h4-2Ey" id="bzd-nY-G3v"/>
                                     <outlet property="delegate" destination="vNR-h4-2Ey" id="5gG-La-T88"/>
-                                    <outletCollection property="gestureRecognizers" destination="Lcs-0E-vhj" appends="YES" id="8qQ-re-Xo3"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -1013,11 +1026,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pE-Nt-UxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Lcs-0E-vhj">
-                    <connections>
-                        <action selector="mydelete:" destination="vNR-h4-2Ey" id="eAJ-bK-kx7"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2913.75" y="694.0140845070423"/>
         </scene>

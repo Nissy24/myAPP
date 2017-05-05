@@ -132,6 +132,67 @@ class clothes: UIViewController,UITextFieldDelegate,UITextViewDelegate,UIImagePi
         }
     }
 
+    func deleteDate(){
+        // AppDelegateを使う用意をしておく
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // エンティティを操作するためのオブジェクトを作成
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        let request: NSFetchRequest<Myitem> = Myitem.fetchRequest()
+        
+        let namePredicte = NSPredicate(format: "saveDate = %@", scmemo as CVarArg)
+        
+        request.predicate = namePredicte
+        
+        do{
+            //データを一括取得
+            let fetchResults = try! viewContext.fetch(request)
+            
+            for result: AnyObject in fetchResults{
+            let record = result as! NSManagedObject
+            // 一行ずつ削除
+            viewContext.delete(record)
+            }
+            try viewContext.save()
+            
+            navigationController?.popToViewController(navigationController!.viewControllers[0], animated: true)
+        }catch{
+        }
+    }
+    
+    @IBAction func mydelete(_ sender: UIButton) {
+        
+        // ① UIAlertControllerクラスのインスタンスを生成
+        // タイトル, メッセージ, Alertのスタイルを指定する
+        // 第3引数のpreferredStyleでアラートの表示スタイルを指定する
+        let alert: UIAlertController = UIAlertController(title: "アイテム削除", message: "削除してもいいですか？", preferredStyle:  UIAlertControllerStyle.alert)
+        
+        // ② Actionの設定
+        // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
+        // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
+        // OKボタン
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in self.deleteDate()
+            print("OK")
+            
+        })
+        // キャンセルボタン
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        
+        // ③ UIAlertControllerにActionを追加
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        // ④ Alertを表示
+        present(alert, animated: true, completion: nil)
+    }
+  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
