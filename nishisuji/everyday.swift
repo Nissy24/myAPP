@@ -22,6 +22,8 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     
     var selectimageIndex = NSDate()
     
+    var scmemo1:Date = Date()
+    
     @IBOutlet weak var syasin: UIImageView!
     
     @IBOutlet weak var syousai: UITextView!
@@ -98,7 +100,7 @@ class everyday: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
                 df.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 
                 // 本日の写真を表示
-                if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke!){
+                if (df.date(from: todayDateStartTime)! < hizuke! && df.date(from: todayDateEndTime)! > hizuke! || hizuke == scmemo1){
                     
                     displayImage(displayurl: today!, dayNum: -1)
                     

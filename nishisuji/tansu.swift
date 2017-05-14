@@ -23,7 +23,7 @@ class tansu: UIViewController,UICollectionViewDelegate,UICollectionViewDataSourc
     var selectimageIndex = NSDate()
     
     // AdMod ID を入れてください
-    let AdMobID = ""
+    let AdMobID = "ca-app-pub-9735287985357463/6435095432"
     let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
     
     let AdModTest:Bool = true

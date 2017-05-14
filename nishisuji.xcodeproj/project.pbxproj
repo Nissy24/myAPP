@@ -51,6 +51,8 @@
 		2B45A1AF1EB1AFF400050EB9 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45A1A21EB1AFF400050EB9 /* o.png */; };
 		2B45A1B01EB1AFF400050EB9 /* p.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45A1A31EB1AFF400050EB9 /* p.png */; };
 		2B45A1B11EB1AFF400050EB9 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45A1A41EB1AFF400050EB9 /* qq.png */; };
+		2B4E99311EC097B30023894A /* customfashion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E99301EC097B30023894A /* customfashion.swift */; };
+		2B4E99331EC09E5A0023894A /* allfashion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E99321EC09E5A0023894A /* allfashion.swift */; };
 		2B5550661E88F430004EEEEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5550651E88F430004EEEEF /* AppDelegate.swift */; };
 		2B55506B1E88F430004EEEEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5550691E88F430004EEEEF /* Main.storyboard */; };
 		2B55506D1E88F430004EEEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B55506C1E88F430004EEEEF /* Assets.xcassets */; };
@@ -156,6 +158,8 @@
 		2B45A1A21EB1AFF400050EB9 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
 		2B45A1A31EB1AFF400050EB9 /* p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p.png; sourceTree = "<group>"; };
 		2B45A1A41EB1AFF400050EB9 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
+		2B4E99301EC097B30023894A /* customfashion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customfashion.swift; sourceTree = "<group>"; };
+		2B4E99321EC09E5A0023894A /* allfashion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allfashion.swift; sourceTree = "<group>"; };
 		2B5550621E88F430004EEEEF /* nishisuji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nishisuji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5550651E88F430004EEEEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B55506A1E88F430004EEEEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 			children = (
 				2B0A509E1EB9B5D900F2758D /* GoogleMobileAds.framework */,
 				2B6C6EEA1E8A2773005E85BD /* ViewController.swift */,
+				2B4E99321EC09E5A0023894A /* allfashion.swift */,
+				2B4E99301EC097B30023894A /* customfashion.swift */,
 				2B5550651E88F430004EEEEF /* AppDelegate.swift */,
 				2B5550691E88F430004EEEEF /* Main.storyboard */,
 				2B55506C1E88F430004EEEEF /* Assets.xcassets */,
@@ -572,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4E99331EC09E5A0023894A /* allfashion.swift in Sources */,
 				2B6C6EEB1E8A2773005E85BD /* ViewController.swift in Sources */,
 				2B12C9E01E90D9FA00962F0B /* tansu.swift in Sources */,
 				2B9B08A61EA286A000EDBDB8 /* everyday.swift in Sources */,
@@ -580,6 +587,7 @@
 				2B752BA41E9103C9003B1F71 /* tuika.swift in Sources */,
 				2BC5D4CB1E93634A00852777 /* nishisuji.xcdatamodeld in Sources */,
 				2B3B502C1E94C81200FFE8B4 /* customImage.swift in Sources */,
+				2B4E99311EC097B30023894A /* customfashion.swift in Sources */,
 				2B3B50291E94B27900FFE8B4 /* Myfashion+CoreDataClass.swift in Sources */,
 				2B5550661E88F430004EEEEF /* AppDelegate.swift in Sources */,
 				2B8093621E8CCC8F006FA676 /* categorydetail.swift in Sources */,

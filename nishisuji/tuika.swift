@@ -350,7 +350,8 @@ class tuika: UIViewController,UIImagePickerControllerDelegate,UINavigationContro
         }, completion: {finished in print("上に現れました")})
     }
 
-
+    // ifで写真が入ってなかったら、アラートを表示(2017/05/08)
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
